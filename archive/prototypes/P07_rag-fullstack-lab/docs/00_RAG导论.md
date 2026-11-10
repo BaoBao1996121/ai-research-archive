@@ -1,4 +1,4 @@
-> 历史研究归档 · 2026-11-10 发布 · 全文已读；公开副本处理了内部引用。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；请结合[归档说明](../../../../ARCHIVE_POLICY.md)阅读。
+> 历史研究归档 · 2026-11-10 发布 · 发布审核状态：full_text（发布前全文隐私审核）。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；见[归档说明](../../../../ARCHIVE_POLICY.md)。
 
 # L00 · RAG 导论：为什么需要 RAG，以及它到底在解决什么
 
@@ -139,7 +139,7 @@ python run.py -c configs/baseline.yaml -q "PSEV 框架是什么？"
 ## 8. 进一步阅读
 
 - 原始论文：[Lewis et al. 2020 · Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401)
-- 工作区报告：[R09](../../../reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R09_%E5%A4%A7%E8%A7%84%E6%A8%A1%E7%9F%A5%E8%AF%86%E5%BA%93%E6%A3%80%E7%B4%A2%E6%96%B9%E6%A1%88.md) 大规模知识库检索方案、R48（原稿交叉引用，本归档未解析） Agent 知识工程全景调研
+- 工作区报告：[R09](../../../reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R09_%E5%A4%A7%E8%A7%84%E6%A8%A1%E7%9F%A5%E8%AF%86%E5%BA%93%E6%A3%80%E7%B4%A2%E6%96%B9%E6%A1%88.md) 大规模知识库检索方案、[R48](../../../reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R48_Agent%E7%9F%A5%E8%AF%86%E5%B7%A5%E7%A8%8B%E5%85%A8%E6%99%AF%E8%B0%83%E7%A0%94.md) Agent 知识工程全景调研
 - 综述：Gao et al. 2023 · Retrieval-Augmented Generation for Large Language Models: A Survey
 
 

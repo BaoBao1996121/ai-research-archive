@@ -16,7 +16,7 @@ related:
   - "[R66](R66_%E5%A4%9A%E6%A8%A1%E6%80%81Agent%E4%B8%8EComputerUse%E8%B0%83%E7%A0%94.md)"
   - "[R69](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R69_LLM_Agent%E7%BB%8F%E6%B5%8E%E5%AD%A6%E4%B8%8E%E5%95%86%E4%B8%9A%E5%86%B3%E7%AD%96.md)"
   - "[R79](R79_Agent%E7%BD%91%E9%A1%B5%E7%88%AC%E8%99%AB%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94.md)"
-  - "R133（原稿交叉引用，本归档未解析）"
+  - "[R133](R133_ObraSuperpowers_AgenticSkillsFramework%E8%B0%83%E7%A0%94.md)"
 key_insights:
   - "Open Generative AI 的护城河不是模型本身，而是把 200+ 多媒体模型包装成可用产品的壳层。"
   - "所谓 self-hosted 在这里主要是前端与编排自托管，云模型能力仍强依赖 MuAPI 账户与商业网关。"
@@ -24,7 +24,7 @@ key_insights:
   - "本地推理价值在隐私与离线兜底，但视频生成的主战场仍是远程 GPU 或云 API。"
 ---
 
-> 历史研究归档 · 2026-11-10 发布 · 程序扫描；未逐篇全文审阅。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；请结合[归档说明](../../../ARCHIVE_POLICY.md)阅读。
+> 历史研究归档 · 2026-11-10 发布 · 发布审核状态：scan_only（发布前程序化隐私扫描）。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；见[归档说明](../../../ARCHIVE_POLICY.md)。
 
 # Open Generative AI 调研
 
@@ -393,7 +393,7 @@ Agent Skills / MCP（机器操作）
 | 多媒体模型 catalog schema 模板 | 值得候选 | 多模型应用都会遇到 endpoint、参数、价格、输入类型、能力标签管理问题 |
 | `self-hosted` 分层检查表 | 值得加入术语/规则 | 可避免把“UI 自托管”误判为“全栈本地” |
 | Open Generative AI 本地实测实验 | 暂不立即做 | 需要下载大安装包/模型，成本高；除非后续要做多媒体 Agent 原型 |
-| Generative-Media-Skills 深度调研 | 值得后续单独成篇 | 与 R133（原稿交叉引用，本归档未解析） Skill 工程化和多模态 Agent 自动化强相关 |
+| Generative-Media-Skills 深度调研 | 值得后续单独成篇 | 与 [R133](R133_ObraSuperpowers_AgenticSkillsFramework%E8%B0%83%E7%A0%94.md) Skill 工程化和多模态 Agent 自动化强相关 |
 
 ### PSEV 映射
 

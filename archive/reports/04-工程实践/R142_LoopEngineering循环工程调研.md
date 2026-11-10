@@ -7,12 +7,12 @@ category: 工程实践
 report_id: R142
 status: completed
 related:
-  - "R123（原稿交叉引用，本归档未解析）"
-  - "R124（原稿交叉引用，本归档未解析）"
-  - "R126（原稿交叉引用，本归档未解析）"
-  - "R127（原稿交叉引用，本归档未解析）"
-  - "R133（原稿交叉引用，本归档未解析）"
-  - "R134（原稿交叉引用，本归档未解析）"
+  - "[R123](../05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R123_RAG%E8%87%AA%E5%8A%A8%E8%AF%84%E4%BC%B0%E4%BC%98%E5%8C%96%E6%A1%86%E6%9E%B6%E8%B0%83%E7%A0%94_%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97%E4%B8%8E%E4%B8%9A%E7%95%8C%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94.md)"
+  - "[R124](R124_%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E8%BF%AD%E4%BB%A3%E9%A3%9E%E8%BD%AE%E5%88%86%E6%9E%90_%E5%9B%9B%E6%AD%A5%E5%BE%AA%E7%8E%AF%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%A1%8C%E5%8A%A8%E8%B7%AF%E5%BE%84.md)"
+  - "[R126](R126_AI%E8%BE%85%E5%8A%A9%E5%BC%80%E5%8F%91%E9%A3%9E%E8%BD%AE_%E6%94%B9%E8%BF%9B%E6%96%B9%E6%A1%88%E4%B8%8E%E5%AE%9E%E6%93%8D%E5%BB%BA%E8%AE%AE.md)"
+  - "[R127](R127_%E9%A3%9E%E8%BD%AE%E5%AE%8C%E6%95%B4%E5%A4%8D%E7%9B%98_%E4%B8%89%E4%BB%BD%E6%8A%A5%E5%91%8A%E6%B1%87%E6%80%BB%E4%B8%8E%E4%B8%AA%E4%BA%BA%E6%B2%89%E6%B7%80%E6%B8%85%E5%8D%95.md)"
+  - "[R133](../06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R133_ObraSuperpowers_AgenticSkillsFramework%E8%B0%83%E7%A0%94.md)"
+  - "[R134](R134_HarnessEngineering%E4%BC%81%E4%B8%9AJava%E8%90%BD%E5%9C%B0%E5%AE%9E%E6%88%98.md)"
 key_insights:
   - "Loop Engineering 的本质不是更会写 prompt，而是把发现任务、分派、执行、验证、记忆和下一步决策外部化成可运行循环。"
   - "它位于 Harness Engineering 之上：Harness 让单次 Agent 执行可靠，Loop 让多次 Agent 执行可持续。"
@@ -20,7 +20,7 @@ key_insights:
   - "对个人和小团队，先做只读/报告型 Loop，再做带写权限的修复型 Loop，最后才考虑自动 PR 或部署。"
 ---
 
-> 历史研究归档 · 2026-11-10 发布 · 程序扫描；未逐篇全文审阅。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；请结合[归档说明](../../../ARCHIVE_POLICY.md)阅读。
+> 历史研究归档 · 2026-11-10 发布 · 发布审核状态：scan_only（发布前程序化隐私扫描）。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；见[归档说明](../../../ARCHIVE_POLICY.md)。
 
 # Loop Engineering 循环工程调研：从提示代理到设计代理自推进系统
 
@@ -28,7 +28,7 @@ key_insights:
 >
 > **研究日期**：2026-06-15  
 > **范围说明**：本文讨论的是 AI coding agent 语境下的 Loop / Looping Engineering，不讨论化工领域的 chemical looping 或控制工程中的传统 loop tuning。  
-> **增量边界**：在已有 R134（原稿交叉引用，本归档未解析） Harness Engineering（单次执行环境）和 R124（原稿交叉引用，本归档未解析）-R127（原稿交叉引用，本归档未解析） AI 辅助开发飞轮（人机协作元循环）基础上，本文补充“自动化多轮 Agent 工作系统”的架构、风险和落地建议。
+> **增量边界**：在已有 [R134](R134_HarnessEngineering%E4%BC%81%E4%B8%9AJava%E8%90%BD%E5%9C%B0%E5%AE%9E%E6%88%98.md) Harness Engineering（单次执行环境）和 [R124](R124_%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E8%BF%AD%E4%BB%A3%E9%A3%9E%E8%BD%AE%E5%88%86%E6%9E%90_%E5%9B%9B%E6%AD%A5%E5%BE%AA%E7%8E%AF%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%A1%8C%E5%8A%A8%E8%B7%AF%E5%BE%84.md)-[R127](R127_%E9%A3%9E%E8%BD%AE%E5%AE%8C%E6%95%B4%E5%A4%8D%E7%9B%98_%E4%B8%89%E4%BB%BD%E6%8A%A5%E5%91%8A%E6%B1%87%E6%80%BB%E4%B8%8E%E4%B8%AA%E4%BA%BA%E6%B2%89%E6%B7%80%E6%B8%85%E5%8D%95.md) AI 辅助开发飞轮（人机协作元循环）基础上，本文补充“自动化多轮 Agent 工作系统”的架构、风险和落地建议。
 
 ---
 
@@ -74,11 +74,11 @@ Addy Osmani 在 2026-06-07 的《Loop Engineering》中给出的核心定义是�
 
 | 已有报告 | 已有结论 | 本文增量 |
 |----------|----------|----------|
-| R134（原稿交叉引用，本归档未解析） Harness Engineering | `.harness/`、rules、skills、wiki、changes 让单次 Agent 执行更可靠 | Loop 把 Harness 放到定时/事件/goal 循环里反复运行 |
-| R124（原稿交叉引用，本归档未解析） 人机交互迭代飞轮 | 当前更像“手摇齿轮组”，缺外部验证、行为度量、迁移证据 | Loop 是自动化候选，但必须补外部信号，否则只会把“手摇”改成“自动空转” |
-| R126（原稿交叉引用，本归档未解析） AI 辅助开发飞轮改进 | 返工计数器、踩坑表、规则断舍离、反思节律 | Loop 可以把这些动作变成定时检查，但不应替代人的判断 |
-| R133（原稿交叉引用，本归档未解析） Superpowers | Skill 是流程规训 + 触发测试 + Review 回路 | Loop 需要 Skill 才能避免每轮重新解释项目约束 |
-| R123（原稿交叉引用，本归档未解析） Eval-Optimize 飞轮 | 持续监控 → 定期体检 → 自动优化 | Loop 是把 Eval-Optimize 推向代码与项目管理场景的执行外壳 |
+| [R134](R134_HarnessEngineering%E4%BC%81%E4%B8%9AJava%E8%90%BD%E5%9C%B0%E5%AE%9E%E6%88%98.md) Harness Engineering | `.harness/`、rules、skills、wiki、changes 让单次 Agent 执行更可靠 | Loop 把 Harness 放到定时/事件/goal 循环里反复运行 |
+| [R124](R124_%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E8%BF%AD%E4%BB%A3%E9%A3%9E%E8%BD%AE%E5%88%86%E6%9E%90_%E5%9B%9B%E6%AD%A5%E5%BE%AA%E7%8E%AF%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%A1%8C%E5%8A%A8%E8%B7%AF%E5%BE%84.md) 人机交互迭代飞轮 | 当前更像“手摇齿轮组”，缺外部验证、行为度量、迁移证据 | Loop 是自动化候选，但必须补外部信号，否则只会把“手摇”改成“自动空转” |
+| [R126](R126_AI%E8%BE%85%E5%8A%A9%E5%BC%80%E5%8F%91%E9%A3%9E%E8%BD%AE_%E6%94%B9%E8%BF%9B%E6%96%B9%E6%A1%88%E4%B8%8E%E5%AE%9E%E6%93%8D%E5%BB%BA%E8%AE%AE.md) AI 辅助开发飞轮改进 | 返工计数器、踩坑表、规则断舍离、反思节律 | Loop 可以把这些动作变成定时检查，但不应替代人的判断 |
+| [R133](../06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R133_ObraSuperpowers_AgenticSkillsFramework%E8%B0%83%E7%A0%94.md) Superpowers | Skill 是流程规训 + 触发测试 + Review 回路 | Loop 需要 Skill 才能避免每轮重新解释项目约束 |
+| [R123](../05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R123_RAG%E8%87%AA%E5%8A%A8%E8%AF%84%E4%BC%B0%E4%BC%98%E5%8C%96%E6%A1%86%E6%9E%B6%E8%B0%83%E7%A0%94_%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97%E4%B8%8E%E4%B8%9A%E7%95%8C%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94.md) Eval-Optimize 飞轮 | 持续监控 → 定期体检 → 自动优化 | Loop 是把 Eval-Optimize 推向代码与项目管理场景的执行外壳 |
 
 一句话关系：
 
@@ -257,7 +257,7 @@ graph TD
 
 理由：
 
-1. 你的知识库已有 100+ 报告、70+ 产出物，积累速度已经超过消化速度；R124（原稿交叉引用，本归档未解析） 已把“消化率追踪”列为关键缺口。
+1. 你的知识库已有 100+ 报告、70+ 产出物，积累速度已经超过消化速度；[R124](R124_%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E8%BF%AD%E4%BB%A3%E9%A3%9E%E8%BD%AE%E5%88%86%E6%9E%90_%E5%9B%9B%E6%AD%A5%E5%BE%AA%E7%8E%AF%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%A1%8C%E5%8A%A8%E8%B7%AF%E5%BE%84.md) 已把“消化率追踪”列为关键缺口。
 2. 知识库维护 Loop 主要是只读分析 + Markdown 归档，风险比自动改代码低。
 3. 该 Loop 能直接服务已有 R126 建议：返工计数器、踩坑速查、规则断舍离、每日微反思。
 
@@ -330,9 +330,9 @@ graph TD
 ### 本地知识库来源
 
 - R123 RAG 自动评估优化框架（原稿交叉引用，本归档未解析）
-- R124 人机交互迭代飞轮分析（原稿交叉引用，本归档未解析）
-- R126 AI 辅助开发飞轮改进方案（原稿交叉引用，本归档未解析）
+- R124 人机交互迭代[飞轮分析](R124_%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E8%BF%AD%E4%BB%A3%E9%A3%9E%E8%BD%AE%E5%88%86%E6%9E%90_%E5%9B%9B%E6%AD%A5%E5%BE%AA%E7%8E%AF%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%A1%8C%E5%8A%A8%E8%B7%AF%E5%BE%84.md)
+- R126 AI 辅助开发[飞轮改进方案](R126_AI%E8%BE%85%E5%8A%A9%E5%BC%80%E5%8F%91%E9%A3%9E%E8%BD%AE_%E6%94%B9%E8%BF%9B%E6%96%B9%E6%A1%88%E4%B8%8E%E5%AE%9E%E6%93%8D%E5%BB%BA%E8%AE%AE.md)
 - R127 飞轮完整复盘（原稿交叉引用，本归档未解析）
-- R133 Obra Superpowers（原稿交叉引用，本归档未解析）
+- R133 [Obra Superpowers](../06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R133_ObraSuperpowers_AgenticSkillsFramework%E8%B0%83%E7%A0%94.md)
 - R134 Harness Engineering 企业 Java 落地（原稿交叉引用，本归档未解析）
 

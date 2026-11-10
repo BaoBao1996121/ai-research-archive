@@ -7,7 +7,7 @@ status: completed
 date: 2026-05-04
 tokens: ~13000
 related:
-  - "R77（原稿交叉引用，本归档未解析）"
+  - "[R77](R77_BrowserHarness%E5%B7%A5%E7%A8%8B%E5%B1%82%E8%B0%83%E7%A0%94.md)"
   - "[R30](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R30_RAG%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%94%9F%E4%BA%A7%E8%90%BD%E5%9C%B0.md)"
   - "[R46](R46_%E5%A4%96%E9%83%A8%E8%B5%84%E8%AE%AF%E5%90%8C%E6%AD%A5_Agent%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0%E4%B8%89%E5%B1%82%E8%8C%83%E5%BC%8F.md)"
   - "[R64](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R64_Agent%E7%BD%91%E5%85%B3%E8%AE%BE%E8%AE%A1_AI_Gateway_LLM_Gateway_MCP_Gateway%E4%B8%89%E5%B1%82%E6%8B%86%E8%A7%A3.md)"
@@ -19,13 +19,13 @@ key_insights:
   - "AGPL 不是 MIT，企业自托管 Firecrawl 前先看 license 否则要把改动开源"
 ---
 
-> 历史研究归档 · 2026-11-10 发布 · 程序扫描并审阅风险命中上下文；未逐篇全文审阅。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；请结合[归档说明](../../../ARCHIVE_POLICY.md)阅读。
+> 历史研究归档 · 2026-11-10 发布 · 发布审核状态：risk_context_review（发布前程序扫描并重点审核风险上下文）。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；见[归档说明](../../../ARCHIVE_POLICY.md)。
 
 # Agent 网页爬虫技术调研：从 BeautifulSoup 到 Firecrawl 的演进与选型
 
 > **一句话**：传统爬虫是"把 HTML 抠出来给人看"，AI 时代爬虫是"把网页洗成 Markdown 给 LLM 吃"。这一次代际转换发生在 2024-2025，标志事件是 Jina Reader 把"一行 URL → 干净 Markdown"做成了标配，Firecrawl 把这事卷成了 11.5 万 Stars 的爆款。**你今天搭 Agent 用爬虫，95% 的场景不用从 BeautifulSoup 写起，直接用 Firecrawl/Crawl4AI/Jina 即可。**
 > 研究日期：2026-05-04
-> 关联报告：R77（原稿交叉引用，本归档未解析） Browser Harness（操作浏览器） · [R30](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R30_RAG%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%94%9F%E4%BA%A7%E8%90%BD%E5%9C%B0.md) RAG 落地（数据进 RAG 之前的清洗） · [R46](R46_%E5%A4%96%E9%83%A8%E8%B5%84%E8%AE%AF%E5%90%8C%E6%AD%A5_Agent%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0%E4%B8%89%E5%B1%82%E8%8C%83%E5%BC%8F.md) 外部资讯同步 · [R64](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R64_Agent%E7%BD%91%E5%85%B3%E8%AE%BE%E8%AE%A1_AI_Gateway_LLM_Gateway_MCP_Gateway%E4%B8%89%E5%B1%82%E6%8B%86%E8%A7%A3.md) Agent 网关
+> 关联报告：[R77](R77_BrowserHarness%E5%B7%A5%E7%A8%8B%E5%B1%82%E8%B0%83%E7%A0%94.md) Browser Harness（操作浏览器） · [R30](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R30_RAG%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%94%9F%E4%BA%A7%E8%90%BD%E5%9C%B0.md) RAG 落地（数据进 RAG 之前的清洗） · [R46](R46_%E5%A4%96%E9%83%A8%E8%B5%84%E8%AE%AF%E5%90%8C%E6%AD%A5_Agent%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0%E4%B8%89%E5%B1%82%E8%8C%83%E5%BC%8F.md) 外部资讯同步 · [R64](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R64_Agent%E7%BD%91%E5%85%B3%E8%AE%BE%E8%AE%A1_AI_Gateway_LLM_Gateway_MCP_Gateway%E4%B8%89%E5%B1%82%E6%8B%86%E8%A7%A3.md) Agent 网关
 
 ---
 
@@ -527,7 +527,7 @@ VS Code Copilot / Claude Code 配置（`.vscode/mcp.json` 或 Claude Desktop 配
 - 跨工具复用（Cursor 配一次，Copilot 也能用）
 - Agent 自己决定什么时候调用爬虫，你只描述意图
 
-**关联**：R77（原稿交叉引用，本归档未解析） §六也讨论过 MCP vs CLI+Skills 的范式之争——爬虫场景里 MCP 完胜，因为输入就一个 URL。
+**关联**：[R77](R77_BrowserHarness%E5%B7%A5%E7%A8%8B%E5%B1%82%E8%B0%83%E7%A0%94.md) §六也讨论过 MCP vs CLI+Skills 的范式之争——爬虫场景里 MCP 完胜，因为输入就一个 URL。
 
 ### 4.5 生产部署 Checklist
 
@@ -615,7 +615,7 @@ VS Code Copilot / Claude Code 配置（`.vscode/mcp.json` 或 Claude Desktop 配
 │   └── ✅ Crawl4AI 自托管 + 自配代理池（Bright Data 等）
 │
 ├── 你在做的是"操作网站"不是"读网站"
-│   └── ⚠️ 走错门，看 R77（原稿交叉引用，本归档未解析） Browser Harness（Stagehand / Playwright MCP）
+│   └── ⚠️ 走错门，看 [R77](R77_BrowserHarness%E5%B7%A5%E7%A8%8B%E5%B1%82%E8%B0%83%E7%A0%94.md) Browser Harness（Stagehand / Playwright MCP）
 │
 ├── 你想让 Coding Agent 直接用爬虫
 │   └── ✅ Firecrawl MCP 一行配置：npx -y firecrawl-mcp
@@ -671,7 +671,7 @@ VS Code Copilot / Claude Code 配置（`.vscode/mcp.json` 或 Claude Desktop 配
 - [Jina Reader 官网](https://jina.ai/reader/) — 2026-05-04 — 一行 URL 调用产品
 - [ScrapeGraphAI GitHub](https://github.com/ScrapeGraphAI/Scrapegraph-ai) — 2026-05-04 — 23.4k Stars / MIT
 - [Crawlee GitHub](https://github.com/apify/crawlee) — 引用结构信息（fetch 失败）
-- 本工作区：R77（原稿交叉引用，本归档未解析） / [R30](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R30_RAG%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%94%9F%E4%BA%A7%E8%90%BD%E5%9C%B0.md) / [R46](R46_%E5%A4%96%E9%83%A8%E8%B5%84%E8%AE%AF%E5%90%8C%E6%AD%A5_Agent%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0%E4%B8%89%E5%B1%82%E8%8C%83%E5%BC%8F.md) / [R64](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R64_Agent%E7%BD%91%E5%85%B3%E8%AE%BE%E8%AE%A1_AI_Gateway_LLM_Gateway_MCP_Gateway%E4%B8%89%E5%B1%82%E6%8B%86%E8%A7%A3.md)
+- 本工作区：[R77](R77_BrowserHarness%E5%B7%A5%E7%A8%8B%E5%B1%82%E8%B0%83%E7%A0%94.md) / [R30](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R30_RAG%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%94%9F%E4%BA%A7%E8%90%BD%E5%9C%B0.md) / [R46](R46_%E5%A4%96%E9%83%A8%E8%B5%84%E8%AE%AF%E5%90%8C%E6%AD%A5_Agent%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0%E4%B8%89%E5%B1%82%E8%8C%83%E5%BC%8F.md) / [R64](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R64_Agent%E7%BD%91%E5%85%B3%E8%AE%BE%E8%AE%A1_AI_Gateway_LLM_Gateway_MCP_Gateway%E4%B8%89%E5%B1%82%E6%8B%86%E8%A7%A3.md)
 
 ⚖️ **来源一致性**：多源一致，关键事实（Stars、License、版本号）均来自 GitHub 官方仓库 README。
 📅 **时效性声明**：以上信息获取于 2026-05-04，价格信息基于当前公开 pricing 页推断（具体折扣以官网为准）。

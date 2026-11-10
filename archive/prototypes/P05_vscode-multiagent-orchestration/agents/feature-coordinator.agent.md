@@ -4,7 +4,7 @@ tools: ['agent', 'edit', 'search', 'codebase', 'usages']
 agents: ['researcher', 'implementer', 'reviewer', 'security-reviewer', 'performance-reviewer']
 ---
 
-> 历史研究归档 · 2026-11-10 发布 · 程序扫描；未逐篇全文审阅。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；请结合[归档说明](../../../../ARCHIVE_POLICY.md)阅读。
+> 历史研究归档 · 2026-11-10 发布 · 发布审核状态：scan_only（发布前程序化隐私扫描）。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；见[归档说明](../../../../ARCHIVE_POLICY.md)。
 
 你是一个 Feature 开发协调者（Coordinator）。**你自己不写代码、不读大块源码**，只负责拆任务和派 subagent。
 

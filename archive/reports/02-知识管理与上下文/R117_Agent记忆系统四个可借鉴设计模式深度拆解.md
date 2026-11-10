@@ -8,20 +8,20 @@ tags: [memory, consolidation, RRF, hybrid-search, Ebbinghaus, decay, token-budge
 date: 2026-05-15
 related:
   - "[R72](R72_Agent%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F%E6%A8%AA%E8%AF%84.md)"
-  - "R48（原稿交叉引用，本归档未解析）"
+  - "[R48](R48_Agent%E7%9F%A5%E8%AF%86%E5%B7%A5%E7%A8%8B%E5%85%A8%E6%99%AF%E8%B0%83%E7%A0%94.md)"
   - "[R74](../01-%E7%90%86%E8%AE%BA%E4%B8%8E%E6%9E%B6%E6%9E%84/R74_%E6%89%8B%E6%90%93MCP%E4%B8%8ESkill%E5%AE%9E%E7%8E%B0%E6%9C%BA%E5%88%B6.md)"
   - "[R102](../01-%E7%90%86%E8%AE%BA%E4%B8%8E%E6%9E%B6%E6%9E%84/R102_Agent_Dreaming_%E5%BD%93AI%E5%AD%A6%E4%BC%9A%E5%81%9A%E6%A2%A6.md)"
 ---
 
-> 历史研究归档 · 2026-11-10 发布 · 程序扫描；未逐篇全文审阅。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；请结合[归档说明](../../../ARCHIVE_POLICY.md)阅读。
+> 历史研究归档 · 2026-11-10 发布 · 发布审核状态：scan_only（发布前程序化隐私扫描）。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；见[归档说明](../../../ARCHIVE_POLICY.md)。
 
 # Agent 记忆系统四个可借鉴设计模式深度拆解
 
 > **一句话概括**：从 agentmemory/Mem0/Letta/认知心理学中提炼出四个已被验证的记忆系统设计模式——四层巩固、RRF 融合检索、Ebbinghaus 衰减 + 矛盾检测、Token 预算控制——逐个拆解原理、给出最小可运行实现、并映射到我们工作区的具体改进点。
 >
 > **研究日期**：2026-05-15
-> **增量价值**：在 [R72](R72_Agent%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F%E6%A8%AA%E8%AF%84.md)（Agent 记忆系统横评）和 R48（原稿交叉引用，本归档未解析）（Agent 知识工程全景）基础上，从"框架选型"下沉到"设计模式级"，提炼四个可独立借鉴的通用模式，不依赖任何特定框架即可落地。
-> **关联报告**：[R72](R72_Agent%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F%E6%A8%AA%E8%AF%84.md)（五家横评）、R48（原稿交叉引用，本归档未解析）（知识工程全景，含 RRF 代码）、[R74](../01-%E7%90%86%E8%AE%BA%E4%B8%8E%E6%9E%B6%E6%9E%84/R74_%E6%89%8B%E6%90%93MCP%E4%B8%8ESkill%E5%AE%9E%E7%8E%B0%E6%9C%BA%E5%88%B6.md)（GBrain 混合搜索）、[R102](../01-%E7%90%86%E8%AE%BA%E4%B8%8E%E6%9E%B6%E6%9E%84/R102_Agent_Dreaming_%E5%BD%93AI%E5%AD%A6%E4%BC%9A%E5%81%9A%E6%A2%A6.md)（Agent Dreaming 记忆巩固）
+> **增量价值**：在 [R72](R72_Agent%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F%E6%A8%AA%E8%AF%84.md)（Agent 记忆系统横评）和 [R48](R48_Agent%E7%9F%A5%E8%AF%86%E5%B7%A5%E7%A8%8B%E5%85%A8%E6%99%AF%E8%B0%83%E7%A0%94.md)（Agent 知识工程全景）基础上，从"框架选型"下沉到"设计模式级"，提炼四个可独立借鉴的通用模式，不依赖任何特定框架即可落地。
+> **关联报告**：[R72](R72_Agent%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F%E6%A8%AA%E8%AF%84.md)（五家横评）、[R48](R48_Agent%E7%9F%A5%E8%AF%86%E5%B7%A5%E7%A8%8B%E5%85%A8%E6%99%AF%E8%B0%83%E7%A0%94.md)（知识工程全景，含 RRF 代码）、[R74](../01-%E7%90%86%E8%AE%BA%E4%B8%8E%E6%9E%B6%E6%9E%84/R74_%E6%89%8B%E6%90%93MCP%E4%B8%8ESkill%E5%AE%9E%E7%8E%B0%E6%9C%BA%E5%88%B6.md)（GBrain 混合搜索）、[R102](../01-%E7%90%86%E8%AE%BA%E4%B8%8E%E6%9E%B6%E6%9E%84/R102_Agent_Dreaming_%E5%BD%93AI%E5%AD%A6%E4%BC%9A%E5%81%9A%E6%A2%A6.md)（Agent Dreaming 记忆巩固）
 
 ---
 
@@ -302,7 +302,7 @@ def triple_rrf_fuse(
 |------|------|
 | 知识库 > 1000 条，查询有关键词+语义双重需求 | 用 RRF |
 | 知识库 < 100 条，全文搜索就够 | 不用，过度工程 |
-| 已有 Milvus/Elasticsearch 等支持 hybrid search 的存储 | 直接用内置 RRF（R48（原稿交叉引用，本归档未解析） §四 有 Milvus 代码） |
+| 已有 Milvus/Elasticsearch 等支持 hybrid search 的存储 | 直接用内置 RRF（[R48](R48_Agent%E7%9F%A5%E8%AF%86%E5%B7%A5%E7%A8%8B%E5%85%A8%E6%99%AF%E8%B0%83%E7%A0%94.md) §四 有 Milvus 代码） |
 | 纯代码搜索（精确匹配为主） | BM25 优先，向量辅助 |
 
 ---
@@ -585,7 +585,7 @@ Token 预算不只控制"总量"，还应该控制"位置"。基于 Lost in the 
 - [Chhikara et al. (2025). Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory, arXiv:2504.19413](https://arxiv.org/abs/2504.19413) — Mem0 记忆巩固算法
 - [rohitg00/agentmemory README](https://github.com/rohitg00/agentmemory) — 2026-05-15 获取 — 四层巩固 + 衰减机制实现参考
 - 本工作区 [R72](R72_Agent%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F%E6%A8%AA%E8%AF%84.md) Agent 记忆系统横评 — 五家框架对比基线
-- 本工作区 R48（原稿交叉引用，本归档未解析） Agent 知识工程全景 — RRF 融合 Milvus 代码
+- 本工作区 [R48](R48_Agent%E7%9F%A5%E8%AF%86%E5%B7%A5%E7%A8%8B%E5%85%A8%E6%99%AF%E8%B0%83%E7%A0%94.md) Agent 知识工程全景 — RRF 融合 Milvus 代码
 
 ⚖️ 来源一致性：高（认知心理学理论 + 工业实践 + 本工作区已有报告交叉验证）
 📅 时效性声明：以上信息获取于 2026-05-15

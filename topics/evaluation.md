@@ -2,7 +2,7 @@
 
 [返回首页](../README.md) · [全部材料](../CATALOG.md)
 
-按原文件名归入专题，共 24 份文档；一份材料可以属于多个专题。
+按原文件名归入专题，共 28 份文档；一份材料可以属于多个专题。
 
 - [_假设验证](../archive/docs/_%E5%81%87%E8%AE%BE%E9%AA%8C%E8%AF%81.md)
 - [RAG评估框架规范](../archive/docs/guides/ai-workflows/RAG%E8%AF%84%E4%BC%B0%E6%A1%86%E6%9E%B6%E8%A7%84%E8%8C%83.md)
@@ -12,7 +12,9 @@
 - [实验5: 从意图到工作流 — 如何实现完美的代码定位](../archive/reports/03-%E5%AE%9E%E9%AA%8C%E9%AA%8C%E8%AF%81/R10_%E6%84%8F%E5%9B%BE%E5%88%B0%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%AE%9E%E9%AA%8C.md)
 - [实验6: 端到端 Agent 测试 — 管道上下文质量验证](../archive/reports/03-%E5%AE%9E%E9%AA%8C%E9%AA%8C%E8%AF%81/R11_%E7%AB%AF%E5%88%B0%E7%AB%AFAgent%E6%B5%8B%E8%AF%95.md)
 - [Skill 自迭代机制深度研究报告](../archive/reports/03-%E5%AE%9E%E9%AA%8C%E9%AA%8C%E8%AF%81/R28_Skill%E8%87%AA%E8%BF%AD%E4%BB%A3%E6%9C%BA%E5%88%B6%E6%B7%B1%E5%BA%A6%E7%A0%94%E7%A9%B6.md)
+- [人机交互迭代飞轮分析：四步循环评估与行动路径](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R124_%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E8%BF%AD%E4%BB%A3%E9%A3%9E%E8%BD%AE%E5%88%86%E6%9E%90_%E5%9B%9B%E6%AD%A5%E5%BE%AA%E7%8E%AF%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%A1%8C%E5%8A%A8%E8%B7%AF%E5%BE%84.md)
 - [PI-I11 · 生产加固与评估：把 Thin Harness 放进厚边界](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R157_PI_Agent%E6%B8%90%E8%BF%9B%E5%BC%8F%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97/lessons/PI-I11-%E7%94%9F%E4%BA%A7%E5%8A%A0%E5%9B%BA%E4%B8%8E%E8%AF%84%E4%BC%B0.md)
+- [RAG 自动评估-优化框架调研：红蓝对抗与业界方案对比](../archive/reports/05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R123_RAG%E8%87%AA%E5%8A%A8%E8%AF%84%E4%BC%B0%E4%BC%98%E5%8C%96%E6%A1%86%E6%9E%B6%E8%B0%83%E7%A0%94_%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97%E4%B8%8E%E4%B8%9A%E7%95%8C%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94.md)
 - [最小 Coding Agent 能力边界与 Benchmark 路线](../archive/reports/05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R158_%E6%9C%80%E5%B0%8FCodingAgent%E8%83%BD%E5%8A%9B%E8%BE%B9%E7%95%8C%E4%B8%8EBenchmark%E8%B7%AF%E7%BA%BF_2026-08-03.md)
 - [Skill 与 Agent 评估方案全景调研报告](../archive/reports/05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R15_Skill%E4%B8%8EAgent%E8%AF%84%E4%BC%B0%E6%96%B9%E6%A1%88%E5%85%A8%E6%99%AF.md)
 - [Codex 与 Claude Code 代码评审评估优化策略](../archive/reports/05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R160_Codex%E4%B8%8EClaudeCode%E4%BB%A3%E7%A0%81%E8%AF%84%E5%AE%A1%E8%AF%84%E4%BC%B0%E4%BC%98%E5%8C%96%E7%AD%96%E7%95%A5_2026-08-18.md)
@@ -22,7 +24,9 @@
 - [Agent 安全与红队攻防体系研究报告](../archive/reports/05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R57_Agent%E5%AE%89%E5%85%A8%E4%B8%8E%E7%BA%A2%E9%98%9F%E6%94%BB%E9%98%B2%E4%BD%93%E7%B3%BB.md)
 - [LLM Benchmark 速查手册](../archive/reports/05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R60_LLM_Benchmark%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.md)
 - [Agent SDK 选型指南（2026 Q2 · 格式验证版）](../archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R132_Agent_SDK%E9%80%89%E5%9E%8B%E6%8C%87%E5%8D%97_%E6%A0%BC%E5%BC%8F%E9%AA%8C%E8%AF%81%E7%89%88.md)
+- [RAG评估框架整合](../archive/reports/RAG%E8%AF%84%E4%BC%B0%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88.md)
 - [RAG 评估框架实施指南](../archive/reports/ai-workflows/RAG-%E8%AF%84%E4%BC%B0%E6%A1%86%E6%9E%B6%E5%AE%9E%E6%96%BD%E6%8C%87%E5%8D%97.md)
+- [RAG链路验证流程](../archive/reports/ai-workflows/RAG%E9%93%BE%E8%B7%AF%E9%AA%8C%E8%AF%81%E6%B5%81%E7%A8%8B.md)
 - [RAG 评估分层基线设计](../archive/reports/rag-eval/RAG-%E8%AF%84%E4%BC%B0%E5%88%86%E5%B1%82%E5%9F%BA%E7%BA%BF%E8%AE%BE%E8%AE%A1.md)
 - [质量Oracle固化调研报告](../archive/reports/rag-quality-oracle/%E8%B4%A8%E9%87%8FOracle%E5%9B%BA%E5%8C%96.md)
 - [Claim Shadow验证方案](../archive/skills/rag-experiment/Claim-Shadow%E9%AA%8C%E8%AF%81%E6%96%B9%E6%A1%88.md)

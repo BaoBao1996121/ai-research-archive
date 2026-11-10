@@ -2,7 +2,7 @@
 
 [返回首页](../README.md) · [全部材料](../CATALOG.md)
 
-按原文件名归入专题，共 27 份文档；一份材料可以属于多个专题。
+按原文件名归入专题，共 28 份文档；一份材料可以属于多个专题。
 
 - [LLM路由与检索逻辑优化](../archive/docs/LLM%E8%B7%AF%E7%94%B1%E4%B8%8E%E6%A3%80%E7%B4%A2/LLM%E8%B7%AF%E7%94%B1%E4%B8%8E%E6%A3%80%E7%B4%A2%E9%80%BB%E8%BE%91%E4%BC%98%E5%8C%96.md)
 - [P04 · LLM Gateway Lab](../archive/prototypes/P04_llm-gateway-lab/README.md)
@@ -16,6 +16,7 @@
 - [R61 · LLM 从业者数学与代码速查手册](../archive/reports/01-%E7%90%86%E8%AE%BA%E4%B8%8E%E6%9E%B6%E6%9E%84/R61_LLM%E4%BB%8E%E4%B8%9A%E8%80%85%E6%95%B0%E5%AD%A6%E4%B8%8E%E4%BB%A3%E7%A0%81%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.md)
 - [LLM 预训练全景：从数据到 Scaling Law](../archive/reports/01-%E7%90%86%E8%AE%BA%E4%B8%8E%E6%9E%B6%E6%9E%84/R62_LLM%E9%A2%84%E8%AE%AD%E7%BB%83%E5%85%A8%E6%99%AF_%E4%BB%8E%E6%95%B0%E6%8D%AE%E5%88%B0ScalingLaw.md)
 - [Agent Skills 与 LLM Wiki 工具生态调研报告／](../archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R01_AgentSkills%E4%B8%8ELLMWiki%E7%94%9F%E6%80%81.md)
+- [GBrain 调研与 LLM Wiki 对比](../archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R74_GBrain%E8%B0%83%E7%A0%94%E4%B8%8ELLMWiki%E5%AF%B9%E6%AF%94.md)
 - [Copilot 混合模型路由：用本地 LLM 分流调查任务节约主模型 Token](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R141_Copilot%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8B%E8%B7%AF%E7%94%B1_%E6%9C%AC%E5%9C%B0LLM%E5%88%86%E6%B5%81%E8%B0%83%E7%A0%94.md)
 - [小模型微调、LoRA 与量化实战前置学习指南](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R159_%E5%B0%8F%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83LoRA%E9%87%8F%E5%8C%96%E5%AE%9E%E6%88%98%E5%89%8D%E7%BD%AE%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97.md)
 - [LLM 从业者学习路线总览](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R54_LLM%E4%BB%8E%E4%B8%9A%E8%80%85%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E6%80%BB%E8%A7%88.md)

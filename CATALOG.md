@@ -16,18 +16,20 @@
 - [HTTPS配置指南](archive/cheatsheets/nginx/HTTPS%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97.md)
 
 
-## digest（1）
+## digest（2）
 
+- [飞轮复盘沉淀清单 · 2026-05-16](archive/digest/2026-05-16_%E9%A3%9E%E8%BD%AE%E5%A4%8D%E7%9B%98%E6%B2%89%E6%B7%80%E6%B8%85%E5%8D%95.md)
 - [个人沉淀 · digest/](archive/digest/README.md)
 
 
-## docs（21）
+## docs（24）
 
 - [LLM路由与检索逻辑优化](archive/docs/LLM%E8%B7%AF%E7%94%B1%E4%B8%8E%E6%A3%80%E7%B4%A2/LLM%E8%B7%AF%E7%94%B1%E4%B8%8E%E6%A3%80%E7%B4%A2%E9%80%BB%E8%BE%91%E4%BC%98%E5%8C%96.md)
 - [KG与混合检索关系文档](archive/docs/README.md)
 - [_假设验证](archive/docs/_%E5%81%87%E8%AE%BE%E9%AA%8C%E8%AF%81.md)
 - [多轮上下文摘要故障排查记录](archive/docs/_%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E8%AE%B0%E5%BD%95.md)
 - [_环境清单](archive/docs/_%E7%8E%AF%E5%A2%83%E6%B8%85%E5%8D%95.md)
+- [Milvus集合配置管理文档](archive/docs/design/Milvus%E9%9B%86%E5%90%88%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86%E6%96%87%E6%A1%A3.md)
 - [轻量图谱自动抽取与混合检索配合机制](archive/docs/design/%E8%BD%BB%E9%87%8F%E5%9B%BE%E8%B0%B1%E4%B8%8E%E6%B7%B7%E5%90%88%E6%A3%80%E7%B4%A2%E9%85%8D%E5%90%88%E6%9C%BA%E5%88%B6.md)
 - [前后端联调mock后端设计方案](archive/docs/frontend/%E5%89%8D%E5%90%8E%E7%AB%AF%E8%81%94%E8%B0%83mock%E5%90%8E%E7%AB%AF%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88.md)
 - [TTS性能优化方案](archive/docs/guides/TTS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88.md)
@@ -36,9 +38,11 @@
 - [Evaluator证据审阅流程速查卡](archive/docs/guides/hermes/2026-07-05/02-Evaluator%E8%AF%81%E6%8D%AE%E5%AE%A1%E9%98%85%E6%B5%81%E7%A8%8B.md)
 - [Codex技能安装方法](archive/docs/guides/hermes/2026-07-05/03-Codex%E6%8A%80%E8%83%BD%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95.md)
 - [日志管理功能设计](archive/docs/guides/%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86%E5%8A%9F%E8%83%BD%E8%AE%BE%E8%AE%A1.md)
+- [服务器部署变更影响分析模板](archive/docs/guides/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E5%8F%98%E6%9B%B4%E5%BD%B1%E5%93%8D%E5%88%86%E6%9E%90%E6%A8%A1%E6%9D%BF.md)
 - [低置信交互协议](archive/docs/interaction/%E4%BD%8E%E7%BD%AE%E4%BF%A1%E4%BA%A4%E4%BA%92%E5%8D%8F%E8%AE%AE.md)
 - [RAG评估工作流结构化文档](archive/docs/methodology/rag-eval.md)
 - [RAG 链路性能优化策略](archive/docs/rag/RAG-%E9%93%BE%E8%B7%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%AD%96%E7%95%A5.md)
+- [豆包 TTS/ASR 接入经验总结](archive/docs/reports/%E8%B1%86%E5%8C%85TTS_ASR%E6%8E%A5%E5%85%A5%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93_20260611.md)
 - [TTS 服务优化策略](archive/docs/tts/TTS-%E6%9C%8D%E5%8A%A1%E4%BC%98%E5%8C%96%E7%AD%96%E7%95%A5.md)
 - [前端访问问题修复方案](archive/docs/%E4%BF%AE%E5%A4%8D%E8%AE%B0%E5%BD%95/%E5%89%8D%E7%AB%AF%E8%AE%BF%E9%97%AE%E9%97%AE%E9%A2%98%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%A1%88.md)
 - [意图识别Schema定义](archive/docs/%E6%84%8F%E5%9B%BE%E8%AF%86%E5%88%AB/%E6%84%8F%E5%9B%BE%E8%AF%86%E5%88%ABSchema%E5%AE%9A%E4%B9%89.md)
@@ -97,15 +101,16 @@
 - [P12 Transformer 可视化学习台](archive/prototypes/P12_transformer-visualization/README.md)
 
 
-## reports（4）
+## reports（5）
 
 - [Crazy 项目设计规范与实现路线](archive/reports/Crazy_project_design.md)
+- [RAG评估框架整合](archive/reports/RAG%E8%AF%84%E4%BC%B0%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88.md)
 - [Agent Loop 基线分析](archive/reports/agent_loop_analysis.md)
 - [新部署流程验证报告](archive/reports/deployment_validation.md)
 - [TTS性能优化实验报告](archive/reports/tts_performance_optimization.md)
 
 
-## reports/00-速查（13）
+## reports/00-速查（15）
 
 - [AI Research Expert技能迁移报告](archive/reports/00-%E9%80%9F%E6%9F%A5/AI-Research-Expert%E6%8A%80%E8%83%BD%E8%BF%81%E7%A7%BB%E6%8A%A5%E5%91%8A.md)
 - [AI 提示词模板速查卡](archive/reports/00-%E9%80%9F%E6%9F%A5/AI%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%A8%A1%E6%9D%BF%E9%80%9F%E6%9F%A5%E5%8D%A1.md)
@@ -114,11 +119,13 @@
 - [Langfuse — 开源 LLM 工程平台速查](archive/reports/00-%E9%80%9F%E6%9F%A5/Langfuse_%E5%BC%80%E6%BA%90LLM%E5%B7%A5%E7%A8%8B%E5%B9%B3%E5%8F%B0%E9%80%9F%E6%9F%A5.md)
 - [OpenHuman 个人 AI 助手速查](archive/reports/00-%E9%80%9F%E6%9F%A5/OpenHuman_%E4%B8%AA%E4%BA%BAAI%E5%8A%A9%E6%89%8B%E9%80%9F%E6%9F%A5.md)
 - [RAGAS 评估框架与 LLM-as-Judge 关系速查](archive/reports/00-%E9%80%9F%E6%9F%A5/RAGAS%E8%AF%84%E4%BC%B0%E6%A1%86%E6%9E%B6%E4%B8%8ELLM-as-Judge%E5%85%B3%E7%B3%BB%E9%80%9F%E6%9F%A5.md)
+- [速查目录 (Quick Reference)](archive/reports/00-%E9%80%9F%E6%9F%A5/README.md)
 - [Superpowers — Agentic 技能框架速查](archive/reports/00-%E9%80%9F%E6%9F%A5/Superpowers_Agentic%E6%8A%80%E8%83%BD%E6%A1%86%E6%9E%B6%E9%80%9F%E6%9F%A5.md)
 - [Superpowers vs GStack：AI 编码方法论对比速查](archive/reports/00-%E9%80%9F%E6%9F%A5/Superpowers_vs_GStack_AI%E7%BC%96%E7%A0%81%E6%96%B9%E6%B3%95%E8%AE%BA%E5%AF%B9%E6%AF%94.md)
 - [TencentDB Agent Memory 速查](archive/reports/00-%E9%80%9F%E6%9F%A5/TencentDB_Agent_Memory_%E9%80%9F%E6%9F%A5.md)
 - [agentmemory 速查卡 — AI 编码 Agent 的持久记忆引擎](archive/reports/00-%E9%80%9F%E6%9F%A5/agentmemory_%E7%BC%96%E7%A0%81Agent%E6%8C%81%E4%B9%85%E8%AE%B0%E5%BF%86%E9%80%9F%E6%9F%A5.md)
 - [手机远程控制 VS Code Copilot 方案速查](archive/reports/00-%E9%80%9F%E6%9F%A5/%E6%89%8B%E6%9C%BA%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6Copilot%E6%96%B9%E6%A1%88%E9%80%9F%E6%9F%A5.md)
+- [本地代码仓库索引方案速查](archive/reports/00-%E9%80%9F%E6%9F%A5/%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93%E7%B4%A2%E5%BC%95%E6%96%B9%E6%A1%88%E9%80%9F%E6%9F%A5.md)
 - [飞书入口、DSH工作台与业务流程编排：SE选型速查](archive/reports/00-%E9%80%9F%E6%9F%A5/%E9%A3%9E%E4%B9%A6_DSH%E4%B8%8ELangGraph%E5%88%86%E5%B1%82%E9%80%89%E5%9E%8B%E9%80%9F%E6%9F%A5.md)
 
 
@@ -148,22 +155,26 @@
 - [本地知识库扫描报告](archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/%E6%9C%AC%E5%9C%B0%E7%9F%A5%E8%AF%86%E5%BA%93%E6%89%AB%E6%8F%8F%E6%8A%A5%E5%91%8A.md)
 
 
-## reports/02-知识管理与上下文（14）
+## reports/02-知识管理与上下文（18）
 
 - [Agent 多层记忆系统深度调研](archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/Agent%E5%A4%9A%E5%B1%82%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F%E6%B7%B1%E5%BA%A6%E8%B0%83%E7%A0%94_%E7%BB%BC%E5%90%88%E6%8A%A5%E5%91%8A.md)
 - [Agent Skills 与 LLM Wiki 工具生态调研报告／](archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R01_AgentSkills%E4%B8%8ELLMWiki%E7%94%9F%E6%80%81.md)
 - [大型多仓代码库的 AI 上下文方案研究](archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R08_%E5%A4%A7%E5%9E%8B%E5%A4%9A%E4%BB%93%E4%BB%A3%E7%A0%81%E5%BA%93%E4%B8%8A%E4%B8%8B%E6%96%87%E6%96%B9%E6%A1%88.md)
 - [大规模知识库检索方案调研：RAG 之外的选择](archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R09_%E5%A4%A7%E8%A7%84%E6%A8%A1%E7%9F%A5%E8%AF%86%E5%BA%93%E6%A3%80%E7%B4%A2%E6%96%B9%E6%A1%88.md)
 - [Agent 记忆系统四个可借鉴设计模式深度拆解](archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R117_Agent%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F%E5%9B%9B%E4%B8%AA%E5%8F%AF%E5%80%9F%E9%89%B4%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%B7%B1%E5%BA%A6%E6%8B%86%E8%A7%A3.md)
+- [Code Wiki — 用知识库方法组织代码仓库业务知识的方法讨论](archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R13_CodeWiki%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93%E4%B8%9A%E5%8A%A1%E7%9F%A5%E8%AF%86%E7%BB%84%E7%BB%87.md)
 - [Agent Memory 与 Dream 分项冠军融合设计](archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R150_AgentMemory%E4%B8%8EDream%E5%88%86%E9%A1%B9%E5%86%A0%E5%86%9B%E8%9E%8D%E5%90%88%E8%AE%BE%E8%AE%A1.md)
 - [R161 · Codex 开源边界与长期记忆源码拆解及 DSH 复刻](archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R161_Codex%E5%BC%80%E6%BA%90%E8%BE%B9%E7%95%8C%E4%B8%8E%E9%95%BF%E6%9C%9F%E8%AE%B0%E5%BF%86%E6%BA%90%E7%A0%81%E6%8B%86%E8%A7%A3_2026-08-25.md)
 - [Copilot 全局记忆架构研究——Agent 记忆模块设计借鉴](archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R19_Copilot%E5%85%A8%E5%B1%80%E8%AE%B0%E5%BF%86%E6%9E%B6%E6%9E%84.md)
 - [Obsidian + Wiki 知识库方案研究与实施报告](archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R20_ObsidianWiki%E7%9F%A5%E8%AF%86%E5%BA%93%E6%96%B9%E6%A1%88.md)
 - [Graphify 知识图谱工具深度调研报告](archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R22_Graphify%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E5%B7%A5%E5%85%B7.md)
+- [Agent 知识工程全景调研——解析、存储、检索的主流方案与示例](archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R48_Agent%E7%9F%A5%E8%AF%86%E5%B7%A5%E7%A8%8B%E5%85%A8%E6%99%AF%E8%B0%83%E7%A0%94.md)
 - [Agent 记忆系统横评：Mem0 / Letta / Zep / LangMem / 自建五家对比](archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R72_Agent%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F%E6%A8%AA%E8%AF%84.md)
+- [GBrain 调研与 LLM Wiki 对比](archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R74_GBrain%E8%B0%83%E7%A0%94%E4%B8%8ELLMWiki%E5%AF%B9%E6%AF%94.md)
 - [Obsidian + Claude Code "越用越聪明"模式拆解：机制、对比与借鉴](archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R75_Obsidian%2BClaudeCode%E8%B6%8A%E7%94%A8%E8%B6%8A%E8%81%AA%E6%98%8E%E6%A8%A1%E5%BC%8F%E6%8B%86%E8%A7%A3.md)
 - [手搓 Agent 记忆系统：从 0 到 330 行的渐进式实现 + 五家源码对照](archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R78_%E6%89%8B%E6%90%93Agent%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F_%E4%BB%8E0%E5%88%B0330%E8%A1%8C%E6%B8%90%E8%BF%9B%E5%BC%8F%E5%AE%9E%E7%8E%B0.md)
 - [基础用法：PDF → Markdown](archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R80_%E5%A4%9A%E6%A8%A1%E6%80%81%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%96%87%E6%9C%AC%E6%8A%80%E6%9C%AF%E5%85%A8%E6%99%AF%E8%B0%83%E7%A0%94.md)
+- [Pinecone Nexus 知识引擎调研：编译期知识层与 Agent 基础设施新范式](archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R99_Pinecone_Nexus%E7%9F%A5%E8%AF%86%E5%BC%95%E6%93%8E%E8%B0%83%E7%A0%94_%E7%BC%96%E8%AF%91%E6%9C%9F%E7%9F%A5%E8%AF%86%E5%B1%82.md)
 
 
 ## reports/03-实验验证（4）
@@ -179,12 +190,22 @@
 - [Seeduplex RAG 集成分析](archive/reports/03-%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/Seeduplex-RAG-%E9%9B%86%E6%88%90%E5%88%86%E6%9E%90.md)
 
 
-## reports/04-工程实践（89）
+## reports/04-工程实践（100）
 
 - [AI Agent 部署上线方案全景调研报告](archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R04_Agent%E9%83%A8%E7%BD%B2%E4%B8%8A%E7%BA%BF%E6%96%B9%E6%A1%88%E5%85%A8%E6%99%AF.md)
+- [R116 · OpenHuman 四大设计模式深度拆解与借鉴方案](archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R116_OpenHuman%E5%9B%9B%E5%A4%A7%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%B7%B1%E5%BA%A6%E6%8B%86%E8%A7%A3%E4%B8%8E%E5%80%9F%E9%89%B4%E6%96%B9%E6%A1%88.md)
 - [Superpowers 三大可借鉴机制深度拆解](archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R118_Superpowers%E4%B8%89%E5%A4%A7%E5%8F%AF%E5%80%9F%E9%89%B4%E6%9C%BA%E5%88%B6%E6%B7%B1%E5%BA%A6%E6%8B%86%E8%A7%A3.md)
+- [mattpocock/skills 六大可借鉴设计深度拆解](archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R119_mattpocock_skills%E5%85%AD%E5%A4%A7%E5%80%9F%E9%89%B4%E8%AE%BE%E8%AE%A1%E6%B7%B1%E5%BA%A6%E6%8B%86%E8%A7%A3.md)
+- [Dev Agent 双层架构设计：通用工作流 + 项目专属配置](archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R120_DevAgent%E5%8F%8C%E5%B1%82%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1_%E9%80%9A%E7%94%A8%E5%B7%A5%E4%BD%9C%E6%B5%81%E4%B8%8E%E9%A1%B9%E7%9B%AE%E4%B8%93%E5%B1%9E%E9%85%8D%E7%BD%AE.md)
 - [TencentDB Agent Memory 符号化上下文压缩机制深度拆解](archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R121_TencentDB_Agent_Memory%E7%AC%A6%E5%8F%B7%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8E%8B%E7%BC%A9%E6%9C%BA%E5%88%B6%E6%B7%B1%E5%BA%A6%E6%8B%86%E8%A7%A3.md)
+- [人机交互迭代飞轮分析：四步循环评估与行动路径](archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R124_%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E8%BF%AD%E4%BB%A3%E9%A3%9E%E8%BD%AE%E5%88%86%E6%9E%90_%E5%9B%9B%E6%AD%A5%E5%BE%AA%E7%8E%AF%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%A1%8C%E5%8A%A8%E8%B7%AF%E5%BE%84.md)
+- [知识固化演化复盘：可迁移的方法](archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R125_%E7%9F%A5%E8%AF%86%E5%9B%BA%E5%8C%96%E6%BC%94%E5%8C%96%E5%A4%8D%E7%9B%98_tech-proposal-writer%E4%B8%8Edev-agent.md)
+- [AI 辅助开发飞轮：四步迭代循环分析与改进方案](archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R126_AI%E8%BE%85%E5%8A%A9%E5%BC%80%E5%8F%91%E9%A3%9E%E8%BD%AE_%E6%94%B9%E8%BF%9B%E6%96%B9%E6%A1%88%E4%B8%8E%E5%AE%9E%E6%93%8D%E5%BB%BA%E8%AE%AE.md)
+- [飞轮复盘：方法筛选与知识沉淀](archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R127_%E9%A3%9E%E8%BD%AE%E5%AE%8C%E6%95%B4%E5%A4%8D%E7%9B%98_%E4%B8%89%E4%BB%BD%E6%8A%A5%E5%91%8A%E6%B1%87%E6%80%BB%E4%B8%8E%E4%B8%AA%E4%BA%BA%E6%B2%89%E6%B7%80%E6%B8%85%E5%8D%95.md)
+- [Harness Engineering 企业 Java 落地实战（阿里 price-center 案例）](archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R134_HarnessEngineering%E4%BC%81%E4%B8%9AJava%E8%90%BD%E5%9C%B0%E5%AE%9E%E6%88%98.md)
 - [P08 事件驱动多 Agent 自媒体系统架构复盘](archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R136_P08%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8%E5%A4%9AAgent%E8%87%AA%E5%AA%92%E4%BD%93%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%A4%8D%E7%9B%98.md)
+- [AI 时代程序员能力演化路线图](archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R138_AI%E6%97%B6%E4%BB%A3%E7%A8%8B%E5%BA%8F%E5%91%98%E8%83%BD%E5%8A%9B%E6%BC%94%E5%8C%96%E8%B7%AF%E7%BA%BF%E5%9B%BE.md)
+- [R139：Docker 部署踩坑与防护体系](archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R139_Docker%E9%83%A8%E7%BD%B2%E8%B8%A9%E5%9D%91%E4%B8%8E%E9%98%B2%E6%8A%A4%E4%BD%93%E7%B3%BB.md)
 - [KV 缓存与 Prompt Cache 实战优化指南](archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R140_KV%E7%BC%93%E5%AD%98%E4%B8%8EPrompt_Cache%E5%AE%9E%E6%88%98%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97.md)
 - [Copilot 混合模型路由：用本地 LLM 分流调查任务节约主模型 Token](archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R141_Copilot%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8B%E8%B7%AF%E7%94%B1_%E6%9C%AC%E5%9C%B0LLM%E5%88%86%E6%B5%81%E8%B0%83%E7%A0%94.md)
 - [Loop Engineering 循环工程调研：从提示代理到设计代理自推进系统](archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R142_LoopEngineering%E5%BE%AA%E7%8E%AF%E5%B7%A5%E7%A8%8B%E8%B0%83%E7%A0%94.md)
@@ -270,10 +291,12 @@
 - [RAG实验规划方案](archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/hermes/2026-06-25/01-RAG%E5%AE%9E%E9%AA%8C%E8%A7%84%E5%88%92%E6%96%B9%E6%A1%88.md)
 - [02-RAG并行探索实验记录](archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/hermes/2026-07-04/02-RAG%E5%B9%B6%E8%A1%8C%E6%8E%A2%E7%B4%A2%E5%AE%9E%E9%AA%8C%E8%AE%B0%E5%BD%95.md)
 - [LLM回答核验机制调研报告](archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/hermes/2026-07-18/01-LLM%E5%9B%9E%E7%AD%94%E6%A0%B8%E9%AA%8C%E6%9C%BA%E5%88%B6.md)
+- [技术方案书模板提炼——通用结构与写作方法](archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%A1%88%E4%B9%A6%E5%90%88%E6%A0%BC%E6%A8%A1%E6%9D%BF%E6%8F%90%E7%82%BC.md)
 
 
-## reports/05-评估与质量（8）
+## reports/05-评估与质量（9）
 
+- [RAG 自动评估-优化框架调研：红蓝对抗与业界方案对比](archive/reports/05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R123_RAG%E8%87%AA%E5%8A%A8%E8%AF%84%E4%BC%B0%E4%BC%98%E5%8C%96%E6%A1%86%E6%9E%B6%E8%B0%83%E7%A0%94_%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97%E4%B8%8E%E4%B8%9A%E7%95%8C%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94.md)
 - [最小 Coding Agent 能力边界与 Benchmark 路线](archive/reports/05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R158_%E6%9C%80%E5%B0%8FCodingAgent%E8%83%BD%E5%8A%9B%E8%BE%B9%E7%95%8C%E4%B8%8EBenchmark%E8%B7%AF%E7%BA%BF_2026-08-03.md)
 - [Skill 与 Agent 评估方案全景调研报告](archive/reports/05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R15_Skill%E4%B8%8EAgent%E8%AF%84%E4%BC%B0%E6%96%B9%E6%A1%88%E5%85%A8%E6%99%AF.md)
 - [Codex 与 Claude Code 代码评审评估优化策略](archive/reports/05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R160_Codex%E4%B8%8EClaudeCode%E4%BB%A3%E7%A0%81%E8%AF%84%E5%AE%A1%E8%AF%84%E4%BC%B0%E4%BC%98%E5%8C%96%E7%AD%96%E7%95%A5_2026-08-18.md)
@@ -284,13 +307,15 @@
 - [LLM Benchmark 速查手册](archive/reports/05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R60_LLM_Benchmark%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.md)
 
 
-## reports/06-工具与生态（35）
+## reports/06-工具与生态（40）
 
+- [FastAPI：从零认知到实战 Demo](archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R115_FastAPI%E4%BB%8E%E9%9B%B6%E8%AE%A4%E7%9F%A5%E4%B8%8E%E5%AE%9E%E6%88%98Demo.md)
 - [主流模型长文档生成能力评级](archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R122_%E4%B8%BB%E6%B5%81%E6%A8%A1%E5%9E%8B%E9%95%BF%E6%96%87%E6%A1%A3%E7%94%9F%E6%88%90%E8%83%BD%E5%8A%9B%E8%AF%84%E7%BA%A7.md)
 - [Agent SDK 产品甜区分析与选型指南（2026-05 更新版）](archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R129_Agent_SDK%E4%BA%A7%E5%93%81%E7%94%9C%E5%8C%BA%E5%88%86%E6%9E%90%E4%B8%8E%E9%80%89%E5%9E%8B%E6%8C%87%E5%8D%97_2026-05.md)
 - [Agent SDK 产品甜区分析与选型指南](archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R130_Agent_SDK%E4%BA%A7%E5%93%81%E7%94%9C%E5%8C%BA%E9%80%89%E5%9E%8B%E6%8C%87%E5%8D%97_2026-05-20.md)
 - [Agent SDK 选型指南（2026 Q2）](archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R131_Agent_SDK%E9%80%89%E5%9E%8B%E6%8C%87%E5%8D%97_2026Q2.md)
 - [Agent SDK 选型指南（2026 Q2 · 格式验证版）](archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R132_Agent_SDK%E9%80%89%E5%9E%8B%E6%8C%87%E5%8D%97_%E6%A0%BC%E5%BC%8F%E9%AA%8C%E8%AF%81%E7%89%88.md)
+- [Obra Superpowers（Agentic Skills Framework）调研](archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R133_ObraSuperpowers_AgenticSkillsFramework%E8%B0%83%E7%A0%94.md)
 - [Open Generative AI 调研](archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R135_OpenGenerativeAI%E8%B0%83%E7%A0%94.md)
 - [Claude Science：AI 制药科研工作台调研](archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R143_ClaudeScience_AI%E5%88%B6%E8%8D%AF%E7%A7%91%E7%A0%94%E5%B7%A5%E4%BD%9C%E5%8F%B0%E8%B0%83%E7%A0%94.md)
 - [Trae：Coding Agent 产品线调研](archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R145_Trae_CodingAgent%E4%BA%A7%E5%93%81%E7%BA%BF%E8%B0%83%E7%A0%94.md)
@@ -318,6 +343,9 @@
 - [Agent 主流技术栈搭配速查手册](archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R65_Agent%E4%B8%BB%E6%B5%81%E6%8A%80%E6%9C%AF%E6%A0%88%E6%90%AD%E9%85%8D%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.md)
 - [browser-use 内部流程伪代码](archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R66_%E5%A4%9A%E6%A8%A1%E6%80%81Agent%E4%B8%8EComputerUse%E8%B0%83%E7%A0%94.md)
 - [Coding Agent 深度对比：五家横评（吞掉 G13）](archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R71_Coding_Agent%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94_%E4%BA%94%E5%AE%B6%E6%A8%AA%E8%AF%84.md)
+- [R75 · Qwen3.6 本地部署实战 — RTX 3060 Ti 8GB 落地指南](archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R75_Qwen3.6%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2RTX3060Ti%E5%AE%9E%E6%88%98.md)
+- [mattpocock/skills —— "Skills For Real Engineers" 调研](archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R76_mattpocock_skills_RealEngineers%E8%B0%83%E7%A0%94.md)
+- [Browser Harness —— 让 Agent 能"开车"的那一层脚手架](archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R77_BrowserHarness%E5%B7%A5%E7%A8%8B%E5%B1%82%E8%B0%83%E7%A0%94.md)
 - [Agent 网页爬虫技术调研：从 BeautifulSoup 到 Firecrawl 的演进与选型](archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R79_Agent%E7%BD%91%E9%A1%B5%E7%88%AC%E8%99%AB%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94.md)
 - [2026 Agent 框架最新格局与"手搓 vs 框架"决策分析](archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R81_2026Agent%E6%A1%86%E6%9E%B6%E6%9C%80%E6%96%B0%E6%A0%BC%E5%B1%80%E4%B8%8E%E6%89%8B%E6%90%93vs%E6%A1%86%E6%9E%B6%E5%86%B3%E7%AD%96.md)
 - [2026 主流 LLM 大模型横评](archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R98_2026%E4%B8%BB%E6%B5%81LLM%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%A8%AA%E8%AF%84.md)
@@ -348,9 +376,10 @@
 - [AgentLoop学习计划](archive/reports/agent_loop/AgentLoop%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92.md)
 
 
-## reports/ai-workflows（1）
+## reports/ai-workflows（2）
 
 - [RAG 评估框架实施指南](archive/reports/ai-workflows/RAG-%E8%AF%84%E4%BC%B0%E6%A1%86%E6%9E%B6%E5%AE%9E%E6%96%BD%E6%8C%87%E5%8D%97.md)
+- [RAG链路验证流程](archive/reports/ai-workflows/RAG%E9%93%BE%E8%B7%AF%E9%AA%8C%E8%AF%81%E6%B5%81%E7%A8%8B.md)
 
 
 ## reports/code-integration（1）
@@ -416,7 +445,7 @@
 - [交互体验优化方案](archive/research/%E4%BA%A4%E4%BA%92%E4%BD%93%E9%AA%8C%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88.md)
 
 
-## skills（83）
+## skills（94）
 
 - [Agent Harness Scaffolder Skill](archive/skills/agent-harness-scaffolder/SKILL.md)
 - [ASR&TTS性能优化方案](archive/skills/asr-tts-optimization/SKILL.md)
@@ -424,21 +453,30 @@
 - [启动器问题排查流程](archive/skills/bat_file_troubleshooting/SKILL.md)
 - [循环导入修复方案](archive/skills/circular_import_fix/SKILL.md)
 - [代码验证与测试流程](archive/skills/codex-code-validation-flow/SKILL.md)
+- [旧会话接续与成果保全](archive/skills/codex-session-recovery-and-validation/SKILL.md)
+- [任务接续与恢复规范](archive/skills/codex-task-recovery/SKILL.md)
 - [Contract拆分规则优化](archive/skills/contract-splitting/SKILL.md)
 - [Copilot Efficiency Analyzer Skill](archive/skills/copilot-efficiency-analyzer/SKILL.md)
 - [Crazy Harness子模块实现](archive/skills/crazy_harness/SKILL.md)
 - [评测流程优化](archive/skills/evaluation/SKILL.md)
 - [飞书文档处理标准化命令模板](archive/skills/feishu-docs/%E9%A3%9E%E4%B9%A6%E6%96%87%E6%A1%A3%E5%A4%84%E7%90%86%E6%A0%87%E5%87%86%E5%8C%96%E5%91%BD%E4%BB%A4%E6%A8%A1%E6%9D%BF.md)
 - [分支管理stash操作规范](archive/skills/git-stash-best-practices/SKILL.md)
+- [Git Worktree 管理规范](archive/skills/git-worktree-management/SKILL.md)
 - [语义checkpoint commit模板](archive/skills/git_commit/SKILL.md)
 - [Grant 处理流程优化](archive/skills/grant-processing/SKILL.md)
 - [工作流优化 · 2026-05-31](archive/skills/hermes-extracted/2026-05-31_%E5%B7%A5%E4%BD%9C%E6%B5%81%E4%BC%98%E5%8C%96.md)
+- [技术经验 · 2026-05-31](archive/skills/hermes-extracted/2026-05-31_%E6%8A%80%E6%9C%AF%E7%BB%8F%E9%AA%8C.md)
+- [技术经验 · 2026-05-31 (会话后半段增量)](archive/skills/hermes-extracted/2026-05-31_%E6%8A%80%E6%9C%AF%E7%BB%8F%E9%AA%8C_%E5%A2%9E%E9%87%8F.md)
 - [方法论 · 2026-05-31](archive/skills/hermes-extracted/2026-05-31_%E6%96%B9%E6%B3%95%E8%AE%BA.md)
 - [架构洞察 · 2026-05-31](archive/skills/hermes-extracted/2026-05-31_%E6%9E%B6%E6%9E%84%E6%B4%9E%E5%AF%9F.md)
 - [踩坑记录 · 2026-05-31](archive/skills/hermes-extracted/2026-05-31_%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95.md)
 - [会话分析日报（二次分析）· 2026-06-04](archive/skills/hermes-extracted/2026-06-04/deep-digest.md)
+- [踩坑记录 · 2026-06-04](archive/skills/hermes-extracted/2026-06-04/pitfalls.md)
+- [可复用模式 · 2026-06-04](archive/skills/hermes-extracted/2026-06-04/reusable-patterns.md)
+- [技术经验 · 2026-06-04](archive/skills/hermes-extracted/2026-06-04/tech-lessons.md)
 - [工作流优化 · 2026-06-04](archive/skills/hermes-extracted/2026-06-04/workflow-opts.md)
 - [Hermes 每日总结稳定性经验 · 2026-06-04](archive/skills/hermes-extracted/2026-06-04_Hermes%E6%AF%8F%E6%97%A5%E6%80%BB%E7%BB%93%E7%A8%B3%E5%AE%9A%E6%80%A7%E7%BB%8F%E9%AA%8C.md)
+- [详尽会话调查经验 · 2026-06-04](archive/skills/hermes-extracted/2026-06-04_%E8%AF%A6%E5%B0%BD%E4%BC%9A%E8%AF%9D%E8%B0%83%E6%9F%A5%E7%BB%8F%E9%AA%8C.md)
 - [auto-solidified](archive/skills/hermes-extracted/2026-06-11/auto-solidified.md)
 - [自动固化索引 · 2026-06-12](archive/skills/hermes-extracted/2026-06-12/auto-solidified.md)
 - [自动固化索引 · 2026-06-13](archive/skills/hermes-extracted/2026-06-13/auto-solidified.md)
@@ -490,9 +528,11 @@
 - [Skill Evaluator](archive/skills/skill-evaluator/SKILL.md)
 - [SOLID设计模式速查卡](archive/skills/solid-design/SOLID%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%96%87%E6%A1%A3.md)
 - [Source Code Dissector Skill](archive/skills/source-code-dissector/SKILL.md)
+- [Tech Proposal Writer](archive/skills/tech-proposal-writer/SKILL.md)
 - [Tech Selector Skill](archive/skills/tech-selector/SKILL.md)
 - [Terse Mode Skill](archive/skills/terse-mode/SKILL.md)
 - [工具链安装问题排查](archive/skills/troubleshooting/SKILL.md)
+- [TTS 性能优化流程](archive/skills/tts-performance-optimization/SKILL.md)
 - [语音段空隙问题优化方法](archive/skills/voice-segment-optimization/SKILL.md)
 - [语音分句器修复方案](archive/skills/voice/SKILL.md)
 - [统一的低置信交互协议设计](archive/skills/%E4%BA%A4%E4%BA%92%E4%BD%93%E9%AA%8C%E4%BC%98%E5%8C%96/%E7%BB%9F%E4%B8%80%E7%9A%84%E4%BD%8E%E7%BD%AE%E4%BF%A1%E4%BA%A4%E4%BA%92%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1.md)
@@ -522,10 +562,11 @@
 - [AI Agent 从零到生产 — 自学教程](archive/tutorial/README.md)
 
 
-## wiki（5）
+## wiki（6）
 
 - [Subagent 审计 Prompt 模板](archive/wiki/templates/Subagent%E5%AE%A1%E8%AE%A1Prompt%E6%A8%A1%E6%9D%BF.md)
 - [会话日志回补指令](archive/wiki/templates/%E4%BC%9A%E8%AF%9D%E6%97%A5%E5%BF%97%E5%9B%9E%E8%A1%A5%E6%8C%87%E4%BB%A4.md)
 - [会话日志：{{title}}](archive/wiki/templates/%E4%BC%9A%E8%AF%9D%E6%97%A5%E5%BF%97%E6%A8%A1%E6%9D%BF.md)
 - [实验{{number}}: {{title}}](archive/wiki/templates/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A%E6%A8%A1%E6%9D%BF.md)
+- [技术方案书模板](archive/wiki/templates/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%A1%88%E4%B9%A6%E6%A8%A1%E6%9D%BF.md)
 - [{{title}}](archive/wiki/templates/%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A%E6%A8%A1%E6%9D%BF.md)

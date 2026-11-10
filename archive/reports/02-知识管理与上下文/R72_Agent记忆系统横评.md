@@ -13,10 +13,10 @@ related:
   - "[R47](../06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R47_Redis%E5%9C%A8Agent%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E4%B8%8E%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88.md)"
   - "[R30](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R30_RAG%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%94%9F%E4%BA%A7%E8%90%BD%E5%9C%B0.md)"
   - "[R33](../05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R33_%E9%95%BF%E6%95%88AgentHarness%E5%B7%A5%E7%A8%8B%E5%8C%96.md)"
-  - "R48（原稿交叉引用，本归档未解析）"
+  - "[R48](R48_Agent%E7%9F%A5%E8%AF%86%E5%B7%A5%E7%A8%8B%E5%85%A8%E6%99%AF%E8%B0%83%E7%A0%94.md)"
 ---
 
-> 历史研究归档 · 2026-11-10 发布 · 程序扫描；未逐篇全文审阅。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；请结合[归档说明](../../../ARCHIVE_POLICY.md)阅读。
+> 历史研究归档 · 2026-11-10 发布 · 发布审核状态：scan_only（发布前程序化隐私扫描）。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；见[归档说明](../../../ARCHIVE_POLICY.md)。
 
 # Agent 记忆系统横评：Mem0 / Letta / Zep / LangMem / 自建五家对比
 
@@ -25,7 +25,7 @@ related:
 > **研究日期**：2026-04-25
 > **研究类型**：学习向调研（双轨并行：定位透镜 + 五家技术拆解 + 五段 Hello World + 自建 200 行最小实现）
 > **增量价值**：在 [R19](R19_Copilot%E5%85%A8%E5%B1%80%E8%AE%B0%E5%BF%86%E6%9E%B6%E6%9E%84.md)（Copilot 五层指令记忆）和 [R47](../06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R47_Redis%E5%9C%A8Agent%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E4%B8%8E%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88.md)（Redis 六大应用模式）基础上，**首次系统横评 Agent 专用记忆框架**，把 [R47](../06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R47_Redis%E5%9C%A8Agent%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E4%B8%8E%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88.md) §六.D 一句带过的 Mem0/Letta 展开成产品级选型指南；填补"记忆系统专题"知识空白
-> **关联报告**：[R19](R19_Copilot%E5%85%A8%E5%B1%80%E8%AE%B0%E5%BF%86%E6%9E%B6%E6%9E%84.md)（Copilot 全局记忆架构 — 分层指令记忆范式）、[R47](../06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R47_Redis%E5%9C%A8Agent%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E4%B8%8E%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88.md)（Redis 在 Agent 中的应用 — 自建路线技术底座）、[R30](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R30_RAG%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%94%9F%E4%BA%A7%E8%90%BD%E5%9C%B0.md)（RAG 从入门到生产 — 检索技术骨架）、[R33](../05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R33_%E9%95%BF%E6%95%88AgentHarness%E5%B7%A5%E7%A8%8B%E5%8C%96.md)（长效 AgentHarness 工程化 — 长会话场景）、R48（原稿交叉引用，本归档未解析）（Agent 知识工程全景）
+> **关联报告**：[R19](R19_Copilot%E5%85%A8%E5%B1%80%E8%AE%B0%E5%BF%86%E6%9E%B6%E6%9E%84.md)（Copilot 全局记忆架构 — 分层指令记忆范式）、[R47](../06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R47_Redis%E5%9C%A8Agent%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E4%B8%8E%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88.md)（Redis 在 Agent 中的应用 — 自建路线技术底座）、[R30](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R30_RAG%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%94%9F%E4%BA%A7%E8%90%BD%E5%9C%B0.md)（RAG 从入门到生产 — 检索技术骨架）、[R33](../05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R33_%E9%95%BF%E6%95%88AgentHarness%E5%B7%A5%E7%A8%8B%E5%8C%96.md)（长效 AgentHarness 工程化 — 长会话场景）、[R48](R48_Agent%E7%9F%A5%E8%AF%86%E5%B7%A5%E7%A8%8B%E5%85%A8%E6%99%AF%E8%B0%83%E7%A0%94.md)（Agent 知识工程全景）
 
 ---
 
@@ -501,7 +501,7 @@ $$
 | [R47](../06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R47_Redis%E5%9C%A8Agent%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E4%B8%8E%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88.md) Redis 在 Agent 中的应用 | §六.D 一句带过 Mem0/Letta | 本报告把 §2.2 和 §3.2 完整展开，是 R47 §六的"深入版" |
 | [R30](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R30_RAG%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%94%9F%E4%BA%A7%E8%90%BD%E5%9C%B0.md) RAG 从入门到生产 | 检索技术（embedding + ANN）是记忆系统的底座 | 本报告的"自建" §2.2.E 直接复用 R30 的 embedding 选型结论 |
 | [R33](../05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R33_%E9%95%BF%E6%95%88AgentHarness%E5%B7%A5%E7%A8%8B%E5%8C%96.md) 长效 AgentHarness 工程化 | "长会话场景"是记忆系统的核心战场 | 本报告 §6 决策速查给出"长任务场景应选 Letta"的明确推荐 |
-| R48（原稿交叉引用，本归档未解析） Agent 知识工程全景 | 知识 vs 记忆边界讨论 | 本报告补充："记忆是用户/会话级的、知识是组织/全局级的" |
+| [R48](R48_Agent%E7%9F%A5%E8%AF%86%E5%B7%A5%E7%A8%8B%E5%85%A8%E6%99%AF%E8%B0%83%E7%A0%94.md) Agent 知识工程全景 | 知识 vs 记忆边界讨论 | 本报告补充："记忆是用户/会话级的、知识是组织/全局级的" |
 
 **新确立的范式**（建议添加到 KNOWLEDGE_INDEX §三）：
 
@@ -1006,7 +1006,7 @@ if __name__ == "__main__":
 - [R47](../06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R47_Redis%E5%9C%A8Agent%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E4%B8%8E%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88.md) Redis 在 Agent 中的应用 — §六.D 简介 Mem0/Letta，本报告是其深化版
 - [R30](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R30_RAG%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%94%9F%E4%BA%A7%E8%90%BD%E5%9C%B0.md) RAG 从入门到生产 — Embedding 选型、向量检索基础
 - [R33](../05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R33_%E9%95%BF%E6%95%88AgentHarness%E5%B7%A5%E7%A8%8B%E5%8C%96.md) 长效 AgentHarness 工程化 — 长会话场景
-- R48（原稿交叉引用，本归档未解析） Agent 知识工程全景 — 知识 vs 记忆边界
+- [R48](R48_Agent%E7%9F%A5%E8%AF%86%E5%B7%A5%E7%A8%8B%E5%85%A8%E6%99%AF%E8%B0%83%E7%A0%94.md) Agent 知识工程全景 — 知识 vs 记忆边界
 - [R26](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R26_LangChain%E4%B8%8ELangGraph%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98.md) LangChain 与 LangGraph 入门到实战 — LangMem 的 LangGraph 前置知识
 - [R63](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R63_LLM%E6%9C%8D%E5%8A%A1%E5%8C%96%E7%94%9F%E4%BA%A7%E9%83%A8%E7%BD%B2_%E6%88%90%E6%9C%AC%E5%BB%B6%E8%BF%9F%E7%9B%91%E6%8E%A7SLA.md) LLM 服务化生产部署 — Token 成本控制方法
 

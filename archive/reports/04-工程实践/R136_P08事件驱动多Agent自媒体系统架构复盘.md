@@ -8,7 +8,7 @@ status: completed
 date: 2026-05-19
 tokens: 12000
 tags: [agent, multi-agent, event-driven, a2a, hitl, edd, content-automation, prototype]
-related: ["[R50](R50_A2A%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97.md)", "[R51](R51_%E5%A4%9AAgent%E7%BC%96%E6%8E%92%E4%B8%89%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F.md)", "[R68](R68_Agent%E4%BA%A7%E5%93%81%E6%A8%A1%E5%BC%8F%E4%B8%8EHITL%E8%AE%BE%E8%AE%A1.md)", "[R70](R70_AI-Native%E5%9B%A2%E9%98%9F%E4%B8%8E%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86.md)", "R133（原稿交叉引用，本归档未解析）", "D74（原稿交叉引用，本归档未解析）"]
+related: ["[R50](R50_A2A%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97.md)", "[R51](R51_%E5%A4%9AAgent%E7%BC%96%E6%8E%92%E4%B8%89%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F.md)", "[R68](R68_Agent%E4%BA%A7%E5%93%81%E6%A8%A1%E5%BC%8F%E4%B8%8EHITL%E8%AE%BE%E8%AE%A1.md)", "[R70](R70_AI-Native%E5%9B%A2%E9%98%9F%E4%B8%8E%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86.md)", "[R133](../06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R133_ObraSuperpowers_AgenticSkillsFramework%E8%B0%83%E7%A0%94.md)", "D74（原稿交叉引用，本归档未解析）"]
 key_insights:
   - "复杂 Agent 系统的核心不是让一个模型更聪明，而是把多个小 Agent 管起来"
   - "事件日志是复杂 Agent 的黑匣子，没有事件日志就没有可调试性"
@@ -17,14 +17,14 @@ key_insights:
   - "自媒体自动化先导出发布包，比一上来全自动发布更接近生产正确解"
 ---
 
-> 历史研究归档 · 2026-11-10 发布 · 程序扫描；未逐篇全文审阅。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；请结合[归档说明](../../../ARCHIVE_POLICY.md)阅读。
+> 历史研究归档 · 2026-11-10 发布 · 发布审核状态：scan_only（发布前程序化隐私扫描）。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；见[归档说明](../../../ARCHIVE_POLICY.md)。
 
 # P08 事件驱动多 Agent 自媒体系统架构复盘
 
 > 一句话概括：本报告复盘 `prototypes/P08_viral_video_agent_lab/` 如何从一个“究极复杂 Agent 示例”演化为真实可运行的自媒体创作 MVP，重点解释其中厉害设计的思路、取舍、解决的问题，以及关键实现如何组织。
 > 研究日期：2026-05-19  
 > 关联产出物：D74（原稿交叉引用，本归档未解析） `prototypes/P08_viral_video_agent_lab/`  
-> 关联知识：[R50](R50_A2A%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97.md) A2A、[R51](R51_%E5%A4%9AAgent%E7%BC%96%E6%8E%92%E4%B8%89%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F.md) 多 Agent 编排、[R68](R68_Agent%E4%BA%A7%E5%93%81%E6%A8%A1%E5%BC%8F%E4%B8%8EHITL%E8%AE%BE%E8%AE%A1.md) HITL、[R70](R70_AI-Native%E5%9B%A2%E9%98%9F%E4%B8%8E%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86.md) EDD、R133（原稿交叉引用，本归档未解析） Agentic Skills Framework
+> 关联知识：[R50](R50_A2A%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97.md) A2A、[R51](R51_%E5%A4%9AAgent%E7%BC%96%E6%8E%92%E4%B8%89%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F.md) 多 Agent 编排、[R68](R68_Agent%E4%BA%A7%E5%93%81%E6%A8%A1%E5%BC%8F%E4%B8%8EHITL%E8%AE%BE%E8%AE%A1.md) HITL、[R70](R70_AI-Native%E5%9B%A2%E9%98%9F%E4%B8%8E%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86.md) EDD、[R133](../06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R133_ObraSuperpowers_AgenticSkillsFramework%E8%B0%83%E7%A0%94.md) Agentic Skills Framework
 
 ---
 

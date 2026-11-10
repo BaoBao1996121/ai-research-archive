@@ -17,7 +17,7 @@ related:
   - "[R40](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R40_%E5%B7%A5%E5%85%B7%E5%BD%A2%E5%BC%8F%E5%9B%9B%E8%B1%A1%E9%99%90%E8%B0%83%E7%A0%94.md)"
 ---
 
-> 历史研究归档 · 2026-11-10 发布 · 程序扫描；未逐篇全文审阅。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；请结合[归档说明](../../../ARCHIVE_POLICY.md)阅读。
+> 历史研究归档 · 2026-11-10 发布 · 发布审核状态：scan_only（发布前程序化隐私扫描）。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；见[归档说明](../../../ARCHIVE_POLICY.md)。
 
 # Coding Agent 深度对比：五家横评（吞掉 G13）
 
@@ -822,7 +822,7 @@ graph TD
 1. ❓ **Subagent 在 Coding Agent 中的最佳粒度**：Claude Code 默认开 subagent 做复杂搜索，但什么任务该开 / 不该开尚无量化指标。**待跟踪**：[R51](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R51_%E5%A4%9AAgent%E7%BC%96%E6%8E%92%E4%B8%89%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F.md) 多 Agent 编排是否给出方法论
 2. ❓ **本地模型 + Coding Agent 何时实用**：Qwen3-Coder 32B 在 SEARCH/REPLACE 上的失败率多少？是否已可替代 Sonnet？需独立实验
 3. ❓ **企业代码合规问题**：上传到 Cursor 云做 embedding 是否触犯数据保护？需法律 + 技术联合调研
-4. ❓ **Coding Agent 在 monorepo（Google/Meta 规模）的可行性**：现有所有方案在 100M+ 行代码 repo 上都打折扣，是否需要专用范式（如 CodeWiki R13（原稿交叉引用，本归档未解析） 路线）
+4. ❓ **Coding Agent 在 monorepo（Google/Meta 规模）的可行性**：现有所有方案在 100M+ 行代码 repo 上都打折扣，是否需要专用范式（如 CodeWiki [R13](../02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R13_CodeWiki%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93%E4%B8%9A%E5%8A%A1%E7%9F%A5%E8%AF%86%E7%BB%84%E7%BB%87.md) 路线）
 5. ❓ **Coding Agent 的评估基准**：SWE-bench 主要评"修 bug"，但没评"渐进式开发体验"——需新基准
 
 ---

@@ -2,7 +2,7 @@
 
 [返回首页](../README.md) · [全部材料](../CATALOG.md)
 
-按原文件名归入专题，共 33 份文档；一份材料可以属于多个专题。
+按原文件名归入专题，共 36 份文档；一份材料可以属于多个专题。
 
 - [LLM路由与检索逻辑优化](../archive/docs/LLM%E8%B7%AF%E7%94%B1%E4%B8%8E%E6%A3%80%E7%B4%A2/LLM%E8%B7%AF%E7%94%B1%E4%B8%8E%E6%A3%80%E7%B4%A2%E9%80%BB%E8%BE%91%E4%BC%98%E5%8C%96.md)
 - [轻量图谱自动抽取与混合检索配合机制](../archive/docs/design/%E8%BD%BB%E9%87%8F%E5%9B%BE%E8%B0%B1%E4%B8%8E%E6%B7%B7%E5%90%88%E6%A3%80%E7%B4%A2%E9%85%8D%E5%90%88%E6%9C%BA%E5%88%B6.md)
@@ -28,8 +28,11 @@
 - [RAG优化流程](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/hermes/2026-06-22/01-RAG%E4%BC%98%E5%8C%96%E6%B5%81%E7%A8%8B.md)
 - [RAG实验规划方案](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/hermes/2026-06-25/01-RAG%E5%AE%9E%E9%AA%8C%E8%A7%84%E5%88%92%E6%96%B9%E6%A1%88.md)
 - [02-RAG并行探索实验记录](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/hermes/2026-07-04/02-RAG%E5%B9%B6%E8%A1%8C%E6%8E%A2%E7%B4%A2%E5%AE%9E%E9%AA%8C%E8%AE%B0%E5%BD%95.md)
+- [RAG 自动评估-优化框架调研：红蓝对抗与业界方案对比](../archive/reports/05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R123_RAG%E8%87%AA%E5%8A%A8%E8%AF%84%E4%BC%B0%E4%BC%98%E5%8C%96%E6%A1%86%E6%9E%B6%E8%B0%83%E7%A0%94_%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97%E4%B8%8E%E4%B8%9A%E7%95%8C%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94.md)
 - [RAGFlow 开源 RAG 引擎深度调研报告](../archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R42_RAGFlow%E5%BC%80%E6%BA%90RAG%E5%BC%95%E6%93%8E.md)
+- [RAG评估框架整合](../archive/reports/RAG%E8%AF%84%E4%BC%B0%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88.md)
 - [RAG 评估框架实施指南](../archive/reports/ai-workflows/RAG-%E8%AF%84%E4%BC%B0%E6%A1%86%E6%9E%B6%E5%AE%9E%E6%96%BD%E6%8C%87%E5%8D%97.md)
+- [RAG链路验证流程](../archive/reports/ai-workflows/RAG%E9%93%BE%E8%B7%AF%E9%AA%8C%E8%AF%81%E6%B5%81%E7%A8%8B.md)
 - [RAG 评估分层基线设计](../archive/reports/rag-eval/RAG-%E8%AF%84%E4%BC%B0%E5%88%86%E5%B1%82%E5%9F%BA%E7%BA%BF%E8%AE%BE%E8%AE%A1.md)
 - [RAG优化阶段总结](../archive/reports/rag-optimization/RAG%E4%BC%98%E5%8C%96%E9%98%B6%E6%AE%B5%E6%80%BB%E7%BB%93.md)
 - [质量Oracle固化调研报告](../archive/reports/rag-quality-oracle/%E8%B4%A8%E9%87%8FOracle%E5%9B%BA%E5%8C%96.md)

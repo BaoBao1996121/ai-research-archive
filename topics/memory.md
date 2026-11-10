@@ -2,7 +2,7 @@
 
 [返回首页](../README.md) · [全部材料](../CATALOG.md)
 
-按原文件名归入专题，共 29 份文档；一份材料可以属于多个专题。
+按原文件名归入专题，共 35 份文档；一份材料可以属于多个专题。
 
 - [02 · Chat Memory — 对话记忆（短期 + 长期）](../archive/prototypes/P03_redis-agent-lab/02_chat_memory/README.md)
 - [L16 · Anthropic Contextual Retrieval（SOTA 切片范式）](../archive/prototypes/P07_rag-fullstack-lab/docs/20_ContextualRetrieval.md)
@@ -15,16 +15,21 @@
 - [大型多仓代码库的 AI 上下文方案研究](../archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R08_%E5%A4%A7%E5%9E%8B%E5%A4%9A%E4%BB%93%E4%BB%A3%E7%A0%81%E5%BA%93%E4%B8%8A%E4%B8%8B%E6%96%87%E6%96%B9%E6%A1%88.md)
 - [大规模知识库检索方案调研：RAG 之外的选择](../archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R09_%E5%A4%A7%E8%A7%84%E6%A8%A1%E7%9F%A5%E8%AF%86%E5%BA%93%E6%A3%80%E7%B4%A2%E6%96%B9%E6%A1%88.md)
 - [Agent 记忆系统四个可借鉴设计模式深度拆解](../archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R117_Agent%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F%E5%9B%9B%E4%B8%AA%E5%8F%AF%E5%80%9F%E9%89%B4%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%B7%B1%E5%BA%A6%E6%8B%86%E8%A7%A3.md)
+- [Code Wiki — 用知识库方法组织代码仓库业务知识的方法讨论](../archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R13_CodeWiki%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93%E4%B8%9A%E5%8A%A1%E7%9F%A5%E8%AF%86%E7%BB%84%E7%BB%87.md)
 - [Agent Memory 与 Dream 分项冠军融合设计](../archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R150_AgentMemory%E4%B8%8EDream%E5%88%86%E9%A1%B9%E5%86%A0%E5%86%9B%E8%9E%8D%E5%90%88%E8%AE%BE%E8%AE%A1.md)
 - [R161 · Codex 开源边界与长期记忆源码拆解及 DSH 复刻](../archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R161_Codex%E5%BC%80%E6%BA%90%E8%BE%B9%E7%95%8C%E4%B8%8E%E9%95%BF%E6%9C%9F%E8%AE%B0%E5%BF%86%E6%BA%90%E7%A0%81%E6%8B%86%E8%A7%A3_2026-08-25.md)
 - [Copilot 全局记忆架构研究——Agent 记忆模块设计借鉴](../archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R19_Copilot%E5%85%A8%E5%B1%80%E8%AE%B0%E5%BF%86%E6%9E%B6%E6%9E%84.md)
 - [Obsidian + Wiki 知识库方案研究与实施报告](../archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R20_ObsidianWiki%E7%9F%A5%E8%AF%86%E5%BA%93%E6%96%B9%E6%A1%88.md)
 - [Graphify 知识图谱工具深度调研报告](../archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R22_Graphify%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E5%B7%A5%E5%85%B7.md)
+- [Agent 知识工程全景调研——解析、存储、检索的主流方案与示例](../archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R48_Agent%E7%9F%A5%E8%AF%86%E5%B7%A5%E7%A8%8B%E5%85%A8%E6%99%AF%E8%B0%83%E7%A0%94.md)
 - [Agent 记忆系统横评：Mem0 / Letta / Zep / LangMem / 自建五家对比](../archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R72_Agent%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F%E6%A8%AA%E8%AF%84.md)
+- [GBrain 调研与 LLM Wiki 对比](../archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R74_GBrain%E8%B0%83%E7%A0%94%E4%B8%8ELLMWiki%E5%AF%B9%E6%AF%94.md)
 - [Obsidian + Claude Code "越用越聪明"模式拆解：机制、对比与借鉴](../archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R75_Obsidian%2BClaudeCode%E8%B6%8A%E7%94%A8%E8%B6%8A%E8%81%AA%E6%98%8E%E6%A8%A1%E5%BC%8F%E6%8B%86%E8%A7%A3.md)
 - [手搓 Agent 记忆系统：从 0 到 330 行的渐进式实现 + 五家源码对照](../archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R78_%E6%89%8B%E6%90%93Agent%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F_%E4%BB%8E0%E5%88%B0330%E8%A1%8C%E6%B8%90%E8%BF%9B%E5%BC%8F%E5%AE%9E%E7%8E%B0.md)
 - [基础用法：PDF → Markdown](../archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R80_%E5%A4%9A%E6%A8%A1%E6%80%81%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%96%87%E6%9C%AC%E6%8A%80%E6%9C%AF%E5%85%A8%E6%99%AF%E8%B0%83%E7%A0%94.md)
+- [Pinecone Nexus 知识引擎调研：编译期知识层与 Agent 基础设施新范式](../archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R99_Pinecone_Nexus%E7%9F%A5%E8%AF%86%E5%BC%95%E6%93%8E%E8%B0%83%E7%A0%94_%E7%BC%96%E8%AF%91%E6%9C%9F%E7%9F%A5%E8%AF%86%E5%B1%82.md)
 - [TencentDB Agent Memory 符号化上下文压缩机制深度拆解](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R121_TencentDB_Agent_Memory%E7%AC%A6%E5%8F%B7%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8E%8B%E7%BC%A9%E6%9C%BA%E5%88%B6%E6%B7%B1%E5%BA%A6%E6%8B%86%E8%A7%A3.md)
+- [知识固化演化复盘：可迁移的方法](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R125_%E7%9F%A5%E8%AF%86%E5%9B%BA%E5%8C%96%E6%BC%94%E5%8C%96%E5%A4%8D%E7%9B%98_tech-proposal-writer%E4%B8%8Edev-agent.md)
 - [Hermes Agent 记忆系统与 Skill 自迭代机制源码拆解报告](../archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R35_HermesAgent%E8%AE%B0%E5%BF%86%E4%B8%8ESkill%E8%87%AA%E8%BF%AD%E4%BB%A3%E6%BA%90%E7%A0%81%E6%8B%86%E8%A7%A3.md)
 - [Chapter 5: 上下文工程 — Agent 的视野](../archive/tutorial/Ch05-%E4%B8%8A%E4%B8%8B%E6%96%87%E5%B7%A5%E7%A8%8B.md)
 - [Chapter 6: 知识管理 — 给 Agent 长期记忆](../archive/tutorial/Ch06-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86.md)
@@ -32,4 +37,5 @@
 - [会话日志回补指令](../archive/wiki/templates/%E4%BC%9A%E8%AF%9D%E6%97%A5%E5%BF%97%E5%9B%9E%E8%A1%A5%E6%8C%87%E4%BB%A4.md)
 - [会话日志：{{title}}](../archive/wiki/templates/%E4%BC%9A%E8%AF%9D%E6%97%A5%E5%BF%97%E6%A8%A1%E6%9D%BF.md)
 - [实验{{number}}: {{title}}](../archive/wiki/templates/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A%E6%A8%A1%E6%9D%BF.md)
+- [技术方案书模板](../archive/wiki/templates/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%A1%88%E4%B9%A6%E6%A8%A1%E6%9D%BF.md)
 - [{{title}}](../archive/wiki/templates/%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A%E6%A8%A1%E6%9D%BF.md)

@@ -8,7 +8,7 @@ report_id: R141
 status: completed
 tokens: 8000
 related:
-  - "R116（原稿交叉引用，本归档未解析）"
+  - "[R116](R116_OpenHuman%E5%9B%9B%E5%A4%A7%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%B7%B1%E5%BA%A6%E6%8B%86%E8%A7%A3%E4%B8%8E%E5%80%9F%E9%89%B4%E6%96%B9%E6%A1%88.md)"
   - "[R71](../06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R71_Coding_Agent%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94_%E4%BA%94%E5%AE%B6%E6%A8%AA%E8%AF%84.md)"
   - "[R32](R32_Copilot%E5%85%A8%E5%B1%80%E8%87%AA%E5%AE%9A%E4%B9%89%E8%B7%A8%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%A4%8D%E7%94%A8.md)"
 key_insights:
@@ -18,14 +18,14 @@ key_insights:
   - "适合委托的任务类型很窄：文本总结、格式转换、事实检索、代码搜索聚合——复杂推理必须留在主模型"
 ---
 
-> 历史研究归档 · 2026-11-10 发布 · 程序扫描；未逐篇全文审阅。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；请结合[归档说明](../../../ARCHIVE_POLICY.md)阅读。
+> 历史研究归档 · 2026-11-10 发布 · 发布审核状态：scan_only（发布前程序化隐私扫描）。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；见[归档说明](../../../ARCHIVE_POLICY.md)。
 
 # Copilot 混合模型路由：用本地 LLM 分流调查任务节约主模型 Token
 
 > 一句话概括：**技术上完全可行，经济上有条件可行，但真正省 Token 的甜点比直觉想象的窄——不是"调查任务"都适合委托，而是只有"质量门槛低于本地模型能力上限"的子任务才值得分流。**
 >
 > 研究日期：2026-05-31
-> 关联报告：R116（原稿交叉引用，本归档未解析） OpenHuman hint-based 模型路由、[R71](../06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R71_Coding_Agent%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94_%E4%BA%94%E5%AE%B6%E6%A8%AA%E8%AF%84.md) Coding Agent 横评、[R32](R32_Copilot%E5%85%A8%E5%B1%80%E8%87%AA%E5%AE%9A%E4%B9%89%E8%B7%A8%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%A4%8D%E7%94%A8.md) Copilot 全局自定义
+> 关联报告：[R116](R116_OpenHuman%E5%9B%9B%E5%A4%A7%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%B7%B1%E5%BA%A6%E6%8B%86%E8%A7%A3%E4%B8%8E%E5%80%9F%E9%89%B4%E6%96%B9%E6%A1%88.md) OpenHuman hint-based 模型路由、[R71](../06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R71_Coding_Agent%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94_%E4%BA%94%E5%AE%B6%E6%A8%AA%E8%AF%84.md) Coding Agent 横评、[R32](R32_Copilot%E5%85%A8%E5%B1%80%E8%87%AA%E5%AE%9A%E4%B9%89%E8%B7%A8%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%A4%8D%E7%94%A8.md) Copilot 全局自定义
 
 ---
 
@@ -392,7 +392,7 @@ print(resp.json()["choices"][0]["message"]["content"])
 
 - VS Code 官方文档 · Bring Your Own Language Model Key · https://code.visualstudio.com/docs/copilot/customization/language-models — 2026-05-28 更新
 - VS Code 官方文档 · AI Extensibility Overview（MCP Tool） · https://code.visualstudio.com/docs/copilot/copilot-extensibility-overview — 2026-05-28 更新
-- R116（原稿交叉引用，本归档未解析） OpenHuman hint-based 模型路由（PATTERN_LIBRARY P-003）
+- [R116](R116_OpenHuman%E5%9B%9B%E5%A4%A7%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%B7%B1%E5%BA%A6%E6%8B%86%E8%A7%A3%E4%B8%8E%E5%80%9F%E9%89%B4%E6%96%B9%E6%A1%88.md) OpenHuman hint-based 模型路由（PATTERN_LIBRARY P-003）
 - P05（原稿交叉引用，本归档未解析） VS Code Copilot 多 Agent 编排原型（异构模型实证）
 - VS Code 官方文档 · Subagents · https://code.visualstudio.com/docs/copilot/agents/subagents — 2026-04-26 确认
 

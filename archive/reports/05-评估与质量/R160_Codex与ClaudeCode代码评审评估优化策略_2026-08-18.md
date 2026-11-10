@@ -8,13 +8,13 @@ report_id: R160
 status: completed
 related:
   - "[R118](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R118_Superpowers%E4%B8%89%E5%A4%A7%E5%8F%AF%E5%80%9F%E9%89%B4%E6%9C%BA%E5%88%B6%E6%B7%B1%E5%BA%A6%E6%8B%86%E8%A7%A3.md)"
-  - "R120（原稿交叉引用，本归档未解析）"
-  - "R124（原稿交叉引用，本归档未解析）"
-  - "R134（原稿交叉引用，本归档未解析）"
+  - "[R120](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R120_DevAgent%E5%8F%8C%E5%B1%82%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1_%E9%80%9A%E7%94%A8%E5%B7%A5%E4%BD%9C%E6%B5%81%E4%B8%8E%E9%A1%B9%E7%9B%AE%E4%B8%93%E5%B1%9E%E9%85%8D%E7%BD%AE.md)"
+  - "[R124](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R124_%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E8%BF%AD%E4%BB%A3%E9%A3%9E%E8%BD%AE%E5%88%86%E6%9E%90_%E5%9B%9B%E6%AD%A5%E5%BE%AA%E7%8E%AF%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%A1%8C%E5%8A%A8%E8%B7%AF%E5%BE%84.md)"
+  - "[R134](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R134_HarnessEngineering%E4%BC%81%E4%B8%9AJava%E8%90%BD%E5%9C%B0%E5%AE%9E%E6%88%98.md)"
   - "[R158](R158_%E6%9C%80%E5%B0%8FCodingAgent%E8%83%BD%E5%8A%9B%E8%BE%B9%E7%95%8C%E4%B8%8EBenchmark%E8%B7%AF%E7%BA%BF_2026-08-03.md)"
 ---
 
-> 历史研究归档 · 2026-11-10 发布 · 程序扫描；未逐篇全文审阅。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；请结合[归档说明](../../../ARCHIVE_POLICY.md)阅读。
+> 历史研究归档 · 2026-11-10 发布 · 发布审核状态：scan_only（发布前程序化隐私扫描）。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；见[归档说明](../../../ARCHIVE_POLICY.md)。
 
 # Codex 与 Claude Code 代码评审评估优化策略
 
@@ -29,9 +29,9 @@ related:
 | 已有报告 | 已知结论 | 本次新增 |
 |---|---|---|
 | [R118](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R118_Superpowers%E4%B8%89%E5%A4%A7%E5%8F%AF%E5%80%9F%E9%89%B4%E6%9C%BA%E5%88%B6%E6%B7%B1%E5%BA%A6%E6%8B%86%E8%A7%A3.md) | Spec 合规与 Code Quality 应由独立上下文分阶段审查 | 映射到 Codex/Claude 的 Skill、subagent 和 finding 协议 |
-| R120（原稿交叉引用，本归档未解析） | 长指令会漂移；隔离、文件锚定和脚本门禁比继续加 MUST 更可靠 | 明确共享规则、工具适配器、Hook/CI 的职责边界 |
-| R124（原稿交叉引用，本归档未解析） | 同模型自审缺少不可博弈的外部信号 | 建立本地金标集、坏基线、oracle、误报/漏报与结果校准 |
-| R134（原稿交叉引用，本归档未解析） | Harness 应把隐性经验变成可执行约束；AI 代码率不是质量 | 给出 risk tier、门禁、例外和增量棘轮 |
+| [R120](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R120_DevAgent%E5%8F%8C%E5%B1%82%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1_%E9%80%9A%E7%94%A8%E5%B7%A5%E4%BD%9C%E6%B5%81%E4%B8%8E%E9%A1%B9%E7%9B%AE%E4%B8%93%E5%B1%9E%E9%85%8D%E7%BD%AE.md) | 长指令会漂移；隔离、文件锚定和脚本门禁比继续加 MUST 更可靠 | 明确共享规则、工具适配器、Hook/CI 的职责边界 |
+| [R124](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R124_%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E8%BF%AD%E4%BB%A3%E9%A3%9E%E8%BD%AE%E5%88%86%E6%9E%90_%E5%9B%9B%E6%AD%A5%E5%BE%AA%E7%8E%AF%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%A1%8C%E5%8A%A8%E8%B7%AF%E5%BE%84.md) | 同模型自审缺少不可博弈的外部信号 | 建立本地金标集、坏基线、oracle、误报/漏报与结果校准 |
+| [R134](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R134_HarnessEngineering%E4%BC%81%E4%B8%9AJava%E8%90%BD%E5%9C%B0%E5%AE%9E%E6%88%98.md) | Harness 应把隐性经验变成可执行约束；AI 代码率不是质量 | 给出 risk tier、门禁、例外和增量棘轮 |
 | [R158](R158_%E6%9C%80%E5%B0%8FCodingAgent%E8%83%BD%E5%8A%9B%E8%BE%B9%E7%95%8C%E4%B8%8EBenchmark%E8%B7%AF%E7%BA%BF_2026-08-03.md) | Evaluator 必须隔离、不可由被测 Agent 修改，并用坏基线/oracle 校准 | 将同一原则用于 reviewer 自身的 benchmark 与版本升级回归 |
 
 本次外部增量包括：
@@ -523,4 +523,4 @@ Evaluator/隐藏证据必须与被测 reviewer 隔离且不可修改。先校准
 
 ## 14. Pattern Forge
 
-新增 P-033 Evidence-Calibrated Review Loop（原稿交叉引用，本归档未解析）：将确定性门禁、独立语义预审、Structural Change Packet、finding verifier、人类 owner 和 outcome benchmark 连接为闭环，并用严重性 × 证据强度控制阻断。它是 [R118](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R118_Superpowers%E4%B8%89%E5%A4%A7%E5%8F%AF%E5%80%9F%E9%89%B4%E6%9C%BA%E5%88%B6%E6%B7%B1%E5%BA%A6%E6%8B%86%E8%A7%A3.md) 双阶段 review、R120（原稿交叉引用，本归档未解析） 脚本门禁、R124（原稿交叉引用，本归档未解析） 外部信号和 [R158](R158_%E6%9C%80%E5%B0%8FCodingAgent%E8%83%BD%E5%8A%9B%E8%BE%B9%E7%95%8C%E4%B8%8EBenchmark%E8%B7%AF%E7%BA%BF_2026-08-03.md) evaluator 校准的共同收敛，不是又一份 checklist。
+新增 P-033 Evidence-Calibrated Review Loop（原稿交叉引用，本归档未解析）：将确定性门禁、独立语义预审、Structural Change Packet、finding verifier、人类 owner 和 outcome benchmark 连接为闭环，并用严重性 × 证据强度控制阻断。它是 [R118](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R118_Superpowers%E4%B8%89%E5%A4%A7%E5%8F%AF%E5%80%9F%E9%89%B4%E6%9C%BA%E5%88%B6%E6%B7%B1%E5%BA%A6%E6%8B%86%E8%A7%A3.md) 双阶段 review、[R120](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R120_DevAgent%E5%8F%8C%E5%B1%82%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1_%E9%80%9A%E7%94%A8%E5%B7%A5%E4%BD%9C%E6%B5%81%E4%B8%8E%E9%A1%B9%E7%9B%AE%E4%B8%93%E5%B1%9E%E9%85%8D%E7%BD%AE.md) 脚本门禁、[R124](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R124_%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E8%BF%AD%E4%BB%A3%E9%A3%9E%E8%BD%AE%E5%88%86%E6%9E%90_%E5%9B%9B%E6%AD%A5%E5%BE%AA%E7%8E%AF%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%A1%8C%E5%8A%A8%E8%B7%AF%E5%BE%84.md) 外部信号和 [R158](R158_%E6%9C%80%E5%B0%8FCodingAgent%E8%83%BD%E5%8A%9B%E8%BE%B9%E7%95%8C%E4%B8%8EBenchmark%E8%B7%AF%E7%BA%BF_2026-08-03.md) evaluator 校准的共同收敛，不是又一份 checklist。

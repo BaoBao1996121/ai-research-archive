@@ -2,7 +2,7 @@
 
 [返回首页](../README.md) · [全部材料](../CATALOG.md)
 
-按原文件名归入专题，共 152 份文档；一份材料可以属于多个专题。
+按原文件名归入专题，共 158 份文档；一份材料可以属于多个专题。
 
 - [异步监控回调模式实验](../archive/experiments/async_agent_pattern/README.md)
 - [GitHub AI 每日热门 — 2026-04-12](../archive/prototypes/P01_multi-agent-demo/2026-04-12-multi-agent-report.md)
@@ -47,12 +47,16 @@
 - [Agent Skills 与 LLM Wiki 工具生态调研报告／](../archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R01_AgentSkills%E4%B8%8ELLMWiki%E7%94%9F%E6%80%81.md)
 - [Agent 记忆系统四个可借鉴设计模式深度拆解](../archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R117_Agent%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F%E5%9B%9B%E4%B8%AA%E5%8F%AF%E5%80%9F%E9%89%B4%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%B7%B1%E5%BA%A6%E6%8B%86%E8%A7%A3.md)
 - [Agent Memory 与 Dream 分项冠军融合设计](../archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R150_AgentMemory%E4%B8%8EDream%E5%88%86%E9%A1%B9%E5%86%A0%E5%86%9B%E8%9E%8D%E5%90%88%E8%AE%BE%E8%AE%A1.md)
+- [Agent 知识工程全景调研——解析、存储、检索的主流方案与示例](../archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R48_Agent%E7%9F%A5%E8%AF%86%E5%B7%A5%E7%A8%8B%E5%85%A8%E6%99%AF%E8%B0%83%E7%A0%94.md)
 - [Agent 记忆系统横评：Mem0 / Letta / Zep / LangMem / 自建五家对比](../archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R72_Agent%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F%E6%A8%AA%E8%AF%84.md)
 - [手搓 Agent 记忆系统：从 0 到 330 行的渐进式实现 + 五家源码对照](../archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R78_%E6%89%8B%E6%90%93Agent%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F_%E4%BB%8E0%E5%88%B0330%E8%A1%8C%E6%B8%90%E8%BF%9B%E5%BC%8F%E5%AE%9E%E7%8E%B0.md)
 - [实验5: 从意图到工作流 — 如何实现完美的代码定位](../archive/reports/03-%E5%AE%9E%E9%AA%8C%E9%AA%8C%E8%AF%81/R10_%E6%84%8F%E5%9B%BE%E5%88%B0%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%AE%9E%E9%AA%8C.md)
 - [实验6: 端到端 Agent 测试 — 管道上下文质量验证](../archive/reports/03-%E5%AE%9E%E9%AA%8C%E9%AA%8C%E8%AF%81/R11_%E7%AB%AF%E5%88%B0%E7%AB%AFAgent%E6%B5%8B%E8%AF%95.md)
 - [AI Agent 部署上线方案全景调研报告](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R04_Agent%E9%83%A8%E7%BD%B2%E4%B8%8A%E7%BA%BF%E6%96%B9%E6%A1%88%E5%85%A8%E6%99%AF.md)
+- [Dev Agent 双层架构设计：通用工作流 + 项目专属配置](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R120_DevAgent%E5%8F%8C%E5%B1%82%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1_%E9%80%9A%E7%94%A8%E5%B7%A5%E4%BD%9C%E6%B5%81%E4%B8%8E%E9%A1%B9%E7%9B%AE%E4%B8%93%E5%B1%9E%E9%85%8D%E7%BD%AE.md)
 - [TencentDB Agent Memory 符号化上下文压缩机制深度拆解](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R121_TencentDB_Agent_Memory%E7%AC%A6%E5%8F%B7%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8E%8B%E7%BC%A9%E6%9C%BA%E5%88%B6%E6%B7%B1%E5%BA%A6%E6%8B%86%E8%A7%A3.md)
+- [知识固化演化复盘：可迁移的方法](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R125_%E7%9F%A5%E8%AF%86%E5%9B%BA%E5%8C%96%E6%BC%94%E5%8C%96%E5%A4%8D%E7%9B%98_tech-proposal-writer%E4%B8%8Edev-agent.md)
+- [Harness Engineering 企业 Java 落地实战（阿里 price-center 案例）](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R134_HarnessEngineering%E4%BC%81%E4%B8%9AJava%E8%90%BD%E5%9C%B0%E5%AE%9E%E6%88%98.md)
 - [P08 事件驱动多 Agent 自媒体系统架构复盘](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R136_P08%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8%E5%A4%9AAgent%E8%87%AA%E5%AA%92%E4%BD%93%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%A4%8D%E7%9B%98.md)
 - [实现前假设验证](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R157_PI_Agent%E6%B8%90%E8%BF%9B%E5%BC%8F%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97/ASSUMPTIONS.md)
 - [PI Agent 学习系列 Capstone：受控代码审阅 Agent](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R157_PI_Agent%E6%B8%90%E8%BF%9B%E5%BC%8F%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97/CAPSTONE.md)
@@ -123,6 +127,7 @@
 - [Agent SDK 产品甜区分析与选型指南](../archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R130_Agent_SDK%E4%BA%A7%E5%93%81%E7%94%9C%E5%8C%BA%E9%80%89%E5%9E%8B%E6%8C%87%E5%8D%97_2026-05-20.md)
 - [Agent SDK 选型指南（2026 Q2）](../archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R131_Agent_SDK%E9%80%89%E5%9E%8B%E6%8C%87%E5%8D%97_2026Q2.md)
 - [Agent SDK 选型指南（2026 Q2 · 格式验证版）](../archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R132_Agent_SDK%E9%80%89%E5%9E%8B%E6%8C%87%E5%8D%97_%E6%A0%BC%E5%BC%8F%E9%AA%8C%E8%AF%81%E7%89%88.md)
+- [Obra Superpowers（Agentic Skills Framework）调研](../archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R133_ObraSuperpowers_AgenticSkillsFramework%E8%B0%83%E7%A0%94.md)
 - [Trae：Coding Agent 产品线调研](../archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R145_Trae_CodingAgent%E4%BA%A7%E5%93%81%E7%BA%BF%E8%B0%83%E7%A0%94.md)
 - [开源 Agent Harness 横评：OpenClaw、Hermes 与六类高光机制](../archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R148_%E5%BC%80%E6%BA%90AgentHarness%E6%A8%AA%E8%AF%84_OpenClaw_Hermes%E4%B8%8E%E5%85%AD%E7%B1%BB%E9%AB%98%E5%85%89%E6%9C%BA%E5%88%B6.md)
 - [OpenClaw 与 Hermes 四大 Harness 亮点源码深拆：对比 Claude Code](../archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R149_OpenClaw%E4%B8%8EHermes%E5%9B%9B%E5%A4%A7Harness%E4%BA%AE%E7%82%B9%E6%BA%90%E7%A0%81%E6%B7%B1%E6%8B%86_%E5%AF%B9%E6%AF%94ClaudeCode.md)
@@ -141,6 +146,7 @@
 - [Agent 主流技术栈搭配速查手册](../archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R65_Agent%E4%B8%BB%E6%B5%81%E6%8A%80%E6%9C%AF%E6%A0%88%E6%90%AD%E9%85%8D%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.md)
 - [browser-use 内部流程伪代码](../archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R66_%E5%A4%9A%E6%A8%A1%E6%80%81Agent%E4%B8%8EComputerUse%E8%B0%83%E7%A0%94.md)
 - [Coding Agent 深度对比：五家横评（吞掉 G13）](../archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R71_Coding_Agent%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94_%E4%BA%94%E5%AE%B6%E6%A8%AA%E8%AF%84.md)
+- [Browser Harness —— 让 Agent 能"开车"的那一层脚手架](../archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R77_BrowserHarness%E5%B7%A5%E7%A8%8B%E5%B1%82%E8%B0%83%E7%A0%94.md)
 - [Agent 网页爬虫技术调研：从 BeautifulSoup 到 Firecrawl 的演进与选型](../archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R79_Agent%E7%BD%91%E9%A1%B5%E7%88%AC%E8%99%AB%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94.md)
 - [2026 Agent 框架最新格局与"手搓 vs 框架"决策分析](../archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R81_2026Agent%E6%A1%86%E6%9E%B6%E6%9C%80%E6%96%B0%E6%A0%BC%E5%B1%80%E4%B8%8E%E6%89%8B%E6%90%93vs%E6%A1%86%E6%9E%B6%E5%86%B3%E7%AD%96.md)
 - [AgentLoop学习计划](../archive/reports/agent_loop/AgentLoop%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92.md)

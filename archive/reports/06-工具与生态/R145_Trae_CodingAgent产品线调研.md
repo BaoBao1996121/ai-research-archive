@@ -9,7 +9,7 @@ tokens: 16000
 tags: [trae, coding-agent, ai-ide, solo-agent, mcp, skills, swe-bench, bytedance]
 related:
   - "[R71_Coding_Agent深度对比_五家横评](R71_Coding_Agent%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94_%E4%BA%94%E5%AE%B6%E6%A8%AA%E8%AF%84.md)"
-  - "R133_ObraSuperpowers_AgenticSkillsFramework调研（原稿交叉引用，本归档未解析）"
+  - "[R133_ObraSuperpowers_AgenticSkillsFramework调研](R133_ObraSuperpowers_AgenticSkillsFramework%E8%B0%83%E7%A0%94.md)"
   - "[R140_KV缓存与Prompt_Cache实战优化指南](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R140_KV%E7%BC%93%E5%AD%98%E4%B8%8EPrompt_Cache%E5%AE%9E%E6%88%98%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97.md)"
   - "[R142_LoopEngineering循环工程调研](../04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R142_LoopEngineering%E5%BE%AA%E7%8E%AF%E5%B7%A5%E7%A8%8B%E8%B0%83%E7%A0%94.md)"
 key_insights:
@@ -19,7 +19,7 @@ key_insights:
   - "实操应分两条线：IDE 产品流看开发者体验，开源 Trae Agent 流看 agent loop 与 trajectory 审计。"
 ---
 
-> 历史研究归档 · 2026-11-10 发布 · 程序扫描；未逐篇全文审阅。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；请结合[归档说明](../../../ARCHIVE_POLICY.md)阅读。
+> 历史研究归档 · 2026-11-10 发布 · 发布审核状态：scan_only（发布前程序化隐私扫描）。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；见[归档说明](../../../ARCHIVE_POLICY.md)。
 
 # Trae：Coding Agent 产品线调研
 

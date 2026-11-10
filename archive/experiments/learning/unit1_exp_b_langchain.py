@@ -1,6 +1,6 @@
 """
 实验 B: LangChain ChatOpenAI + Tool Calling
-参考: uDocWriter/src/llms/llm.py
+公开编辑说明：已删除内部代码位置引用；本文件为历史教学示例，本次未运行。
 
 学习目标:
   1. 理解 LangChain ChatOpenAI 的初始化和调用方式

@@ -9,8 +9,8 @@ tokens: 15000
 tags: [volcengine, cicd, code-pipeline, devops, cloud-native, delivery, vke]
 related:
   - "[R04_Agent部署上线方案全景](R04_Agent%E9%83%A8%E7%BD%B2%E4%B8%8A%E7%BA%BF%E6%96%B9%E6%A1%88%E5%85%A8%E6%99%AF.md)"
-  - "R134_HarnessEngineering企业Java落地实战（原稿交叉引用，本归档未解析）"
-  - "R139_Docker部署踩坑与防护体系（原稿交叉引用，本归档未解析）"
+  - "[R134_HarnessEngineering企业Java落地实战](R134_HarnessEngineering%E4%BC%81%E4%B8%9AJava%E8%90%BD%E5%9C%B0%E5%AE%9E%E6%88%98.md)"
+  - "[R139_Docker部署踩坑与防护体系](R139_Docker%E9%83%A8%E7%BD%B2%E8%B8%A9%E5%9D%91%E4%B8%8E%E9%98%B2%E6%8A%A4%E4%BD%93%E7%B3%BB.md)"
   - "[R142_LoopEngineering循环工程调研](R142_LoopEngineering%E5%BE%AA%E7%8E%AF%E5%B7%A5%E7%A8%8B%E8%B0%83%E7%A0%94.md)"
 key_insights:
   - "火山引擎持续交付的核心不是单次部署，而是把代码源、测试、构建、制品、部署、审批、日志和回滚连成可治理交付链。"
@@ -19,7 +19,7 @@ key_insights:
   - "企业采用要用 DORA 指标、制品追溯、权限最小化、私有资源池可用性和回滚演练来判断成熟度。"
 ---
 
-> 历史研究归档 · 2026-11-10 发布 · 程序扫描；未逐篇全文审阅。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；请结合[归档说明](../../../ARCHIVE_POLICY.md)阅读。
+> 历史研究归档 · 2026-11-10 发布 · 发布审核状态：scan_only（发布前程序化隐私扫描）。原有日期、观点、数据和命令保留历史语境，未经本次逐项事实核验或运行复现；见[归档说明](../../../ARCHIVE_POLICY.md)。
 
 # 火山云 CI/CD：持续交付平台调研
 
