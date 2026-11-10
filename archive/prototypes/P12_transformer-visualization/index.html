@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Transformer 可视化学习台</title>
+  <style>
+    :root{--bg:#f7f5ef;--ink:#24211d;--muted:#6c665d;--line:#d8d1c4;--panel:#fffdfa;--teal:#0f766e;--teal2:#d7f0ec;--amber:#b45309;--amber2:#fde7b7;--rose:#be123c;--rose2:#f9d7df;--green:#497a33;--shadow:0 12px 30px rgba(52,45,35,.09)}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"Microsoft YaHei",system-ui,sans-serif;line-height:1.55;letter-spacing:0} a{color:var(--teal);text-decoration:none} button,input{font:inherit}
+    .shell{max-width:1240px;margin:0 auto;padding:20px}.top{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;align-items:end;border-bottom:1px solid var(--line);padding-bottom:16px}.top h1{font-size:clamp(26px,4vw,48px);line-height:1.08;margin:0 0 8px}.top p{margin:0;color:var(--muted);max-width:760px}.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);padding:6px 10px;border-radius:8px;background:#fff}.source{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .tabs{display:flex;gap:8px;overflow:auto;padding:16px 0}.tab{border:1px solid var(--line);background:#fff;padding:9px 12px;border-radius:8px;white-space:nowrap;cursor:pointer}.tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:16px}.panel,.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow)}.panel{padding:16px}.panel h2{font-size:22px;margin:0 0 8px}.lede{color:var(--muted);margin:0 0 14px}.formula{font-family:ui-monospace,Consolas,monospace;background:#27231f;color:#fff8e7;border-radius:8px;padding:12px;overflow:auto;margin:12px 0}
+    .tokens{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.token{border:1px solid var(--line);background:#fff;padding:9px 11px;border-radius:8px;cursor:pointer;min-width:50px}.token.active{background:var(--teal);border-color:var(--teal);color:#fff}.token.future{opacity:.42}.token.linked{box-shadow:0 0 0 3px var(--amber2)}
+    .attention-story{display:grid;gap:10px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;margin:12px 0}.attention-story p{margin:4px 0;color:var(--muted)}.story-line{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.story-token{border:1px solid var(--line);background:#f8f4ea;border-radius:8px;padding:7px 9px;position:relative}.story-token.current{background:var(--teal);color:#fff;border-color:var(--teal)}.story-token.source{box-shadow:0 0 0 3px var(--amber2)}.source-list{display:grid;gap:6px}.source-row{display:grid;grid-template-columns:70px minmax(0,1fr) 48px;gap:8px;align-items:center;font-size:13px}.source-track{height:10px;border-radius:8px;background:#eee4d6;overflow:hidden}.source-fill{height:100%;background:var(--teal)}
+    .controls{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}.control{background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px}.control label{display:flex;justify-content:space-between;gap:8px;font-size:14px}.control input[type=range]{width:100%;accent-color:var(--teal)}.toggle{display:flex;align-items:center;gap:8px;margin-top:8px;color:var(--muted)}
+    .heatwrap{overflow:auto;border:1px solid var(--line);border-radius:8px;background:#fff}.heat{display:grid;min-width:520px}.cell{min-height:42px;display:flex;align-items:center;justify-content:center;border-right:1px solid rgba(0,0,0,.08);border-bottom:1px solid rgba(0,0,0,.08);font-size:13px}.headcell{background:#f1ece2;font-weight:700}.rowlabel{background:#f8f4ea;font-weight:700}.masked{background:repeating-linear-gradient(135deg,#eee,#eee 6px,#fff 6px,#fff 12px);color:#999}.explain{display:grid;gap:10px}.note{border-left:4px solid var(--teal);background:var(--teal2);padding:10px;border-radius:0 8px 8px 0}.warn{border-left-color:var(--amber);background:var(--amber2)}.bad{border-left-color:var(--rose);background:var(--rose2)}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}.step{background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px;min-height:112px}.step b{display:block;margin-bottom:6px}.mini{font-size:13px;color:var(--muted)}
+    .headtabs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.headtab{border:1px solid var(--line);background:#fff;border-radius:8px;padding:8px 10px;cursor:pointer}.headtab.active{background:var(--amber);border-color:var(--amber);color:#fff}
+    .ropebox{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center}.ropebox svg{width:100%;height:260px;background:#fff;border:1px solid var(--line);border-radius:8px}.seqcompare{display:grid;grid-template-columns:1fr 1fr;gap:10px}.seq{border:1px solid var(--line);background:#fff;border-radius:8px;padding:10px}.seq .bag{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.pill{display:inline-flex;border:1px solid var(--line);border-radius:8px;padding:5px 8px;background:#fff}
+    .block{display:grid;grid-template-columns:1fr 72px 1fr;gap:10px;align-items:center}.node{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}.plus{font-size:28px;text-align:center;color:var(--teal)}.wide{grid-column:1/-1}.flow{display:grid;gap:10px;margin-top:10px}.arrow{text-align:center;color:var(--muted)}
+    .qa{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{padding:14px}.card h3{font-size:17px;margin:0 0 8px}.answer{display:none;color:#3b362f}.card.open .answer{display:block}.reveal{margin-top:10px;border:1px solid var(--line);background:#fff;border-radius:8px;padding:7px 10px;cursor:pointer}
+    .meter{height:12px;background:#eee4d6;border-radius:8px;overflow:hidden}.bar{height:100%;background:linear-gradient(90deg,var(--teal),var(--green),var(--amber));width:50%}.footer{margin:18px 0;color:var(--muted);font-size:14px}.hidden{display:none}
+    @media(max-width:900px){.top,.grid,.ropebox,.qa{grid-template-columns:1fr}.source{justify-content:flex-start}.steps{grid-template-columns:1fr 1fr}.controls{grid-template-columns:1fr}.block{grid-template-columns:1fr}.plus{display:none}} @media(max-width:560px){.steps,.seqcompare{grid-template-columns:1fr}.shell{padding:12px}.panel{padding:12px}.cell{min-height:38px;font-size:12px}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="top">
+      <div>
+        <span class="badge">学习目标：看懂 Attention 的信息流</span>
+        <h1>Transformer 可视化学习台</h1>
+        <p>一句话结论：Transformer 的核心不是“记住词义”，而是让每个 token 动态决定从其他 token 取多少信息。先看信息怎么流动，再看 Q/K/V、mask、多头和位置编码。</p>
+      </div>
+      <div class="source">
+        <span class="badge">本地依据：Obsidian R37</span>
+        <a class="badge" href="https://arxiv.org/abs/1706.03762">Vaswani 2017</a>
+        <a class="badge" href="https://nlp.seas.harvard.edu/annotated-transformer/">Annotated Transformer</a>
+      </div>
+    </section>
+
+    <nav class="tabs" aria-label="模块导航">
+      <button class="tab active" data-view="attention">Self-Attention</button>
+      <button class="tab" data-view="mask">Causal Mask</button>
+      <button class="tab" data-view="heads">Multi-Head</button>
+      <button class="tab" data-view="position">Position</button>
+      <button class="tab" data-view="block">Block</button>
+      <button class="tab" data-view="practice">自测卡</button>
+    </nav>
+
+    <section id="attention" class="view grid">
+      <div class="panel">
+        <h2>Self-Attention：给每个词补上下文</h2>
+        <p class="lede">这一层不是直接输出答案，而是更新每个 token 的表示。比如“他”本来只是代词，看到“小明”以后，新表示里会带上“小明”的信息。</p>
+        <div class="attention-story">
+          <div><b>先看这个例子</b><p>句子：小明 把 苹果 放进 书包，因为 他 饿了。当前正在更新的词会向整句话“查资料”。</p></div>
+          <div id="storyLine" class="story-line"></div>
+          <div id="sourceList" class="source-list"></div>
+        </div>
+        <div class="formula">Attention(Q,K,V) = softmax((QKᵀ + mask) / temperature) V</div>
+        <div id="tokensA" class="tokens"></div>
+        <div class="controls">
+          <div class="control"><label>Softmax 温度 <span id="tempLabel">1.00</span></label><input id="temp" type="range" min=".35" max="2.2" step=".05" value="1"></div>
+          <div class="control"><label>正在更新哪个词 <span id="idxLabel"></span></label><input id="idx" type="range" min="0" max="7" step="1" value="6"><label class="toggle"><input id="maskToggle" type="checkbox"> 只允许看左边，模拟生成模型</label></div>
+        </div>
+        <div id="attentionHeat" class="heatwrap"></div>
+        <div class="steps">
+          <div class="step"><b>1. Q：当前词发出检索请求</b><span id="qText" class="mini"></span></div>
+          <div class="step"><b>2. K：全句每个词都可被匹配</b><span class="mini">Key 像“可被搜索的标签”，不是人工写死的标签，而是模型学出来的向量。</span></div>
+          <div class="step"><b>3. softmax：变成一行比例</b><span id="softText" class="mini"></span></div>
+          <div class="step"><b>4. V：按比例混合信息</b><span id="vText" class="mini"></span></div>
+        </div>
+      </div>
+      <aside class="panel explain">
+        <div class="note"><b>这张表怎么看</b><br>行标题是“正在更新的词”，列标题是“可参考的信息来源”。每个数字是参考比例，一整行加起来等于 1。</div>
+        <div class="note warn"><b>容易误会的点</b><br>最大格子不是“模型输出的答案”，而是当前词最主要的信息来源。比如“他”看“小明”，意思是把“小明”的信息混进“他”的新表示。</div>
+        <div class="note"><b>为什么除以 √dₖ</b><br>点积维度越大，分数方差越大，softmax 越容易极端化。缩放的作用是让梯度更稳定。</div>
+        <div><b>当前注意力集中度</b><div class="meter"><div id="focusBar" class="bar"></div></div><p id="focusText" class="mini"></p></div>
+      </aside>
+    </section>
+
+    <section id="mask" class="view grid hidden">
+      <div class="panel">
+        <h2>Causal Mask：生成模型不能偷看未来</h2>
+        <p class="lede">第 i 行代表第 i 个位置正在预测下一个 token。GPT 类模型只能看自己和左边，上三角必须被设为 -∞。</p>
+        <div id="maskTokens" class="tokens"></div>
+        <div id="maskHeat" class="heatwrap"></div>
+      </div>
+      <aside class="panel explain">
+        <div class="note bad"><b>没有 mask 会怎样</b><br>训练时模型直接看到答案，loss 会虚假变低，但真正生成时会崩。这类错误也叫 label leakage 或 future leakage。</div>
+        <div class="note"><b>公式层面</b><br>先把未来位置的 attention score 加上 -∞，再做 softmax。softmax(-∞)=0，所以未来 Value 不会参与加权和。</div>
+        <div class="note warn"><b>Encoder vs Decoder</b><br>BERT 这类 Encoder 通常双向看全句；GPT 这类 Decoder-Only 必须 causal mask，因为目标是自回归预测下一个 token。</div>
+      </aside>
+    </section>
+
+    <section id="heads" class="view grid hidden">
+      <div class="panel">
+        <h2>Multi-Head：并行学习多种关注模式</h2>
+        <p class="lede">切换不同头。每个头都在同一句话上看不同关系，最后 concat 后再线性融合。</p>
+        <div class="headtabs" id="headTabs"></div>
+        <div id="headHeat" class="heatwrap"></div>
+      </div>
+      <aside class="panel explain">
+        <div class="note"><b>一句话讲清</b><br>Multi-Head 不是“每个头看不同词维度”这么浅，而是在不同低维子空间里并行试探不同路由模式。</div>
+        <div class="note"><b>张量形状</b><br>(B,T,C) 先投影成 Q/K/V，再 reshape 为 (B,H,T,C/H)。H 个头并行算 attention，拼回 C 维。</div>
+        <div class="note warn"><b>工程取舍</b><br>头数更多不必然更好。头维度太小会损失表达，头数太多会增加调度和显存压力。</div>
+      </aside>
+    </section>
+
+    <section id="position" class="view grid hidden">
+      <div class="panel">
+        <h2>Position Encoding：让词序进入模型</h2>
+        <p class="lede">没有位置信息，Self-Attention 更像处理一个集合。“我喜欢猫”和“猫喜欢我”的词袋相同，但语义完全不同。</p>
+        <div class="seqcompare">
+          <div class="seq"><b>句子 A</b><div class="bag"><span class="pill">我</span><span class="pill">喜欢</span><span class="pill">猫</span></div><p class="mini">词序：我 → 喜欢 → 猫</p></div>
+          <div class="seq"><b>句子 B</b><div class="bag"><span class="pill">猫</span><span class="pill">喜欢</span><span class="pill">我</span></div><p class="mini">词序：猫 → 喜欢 → 我</p></div>
+        </div>
+        <div class="ropebox" style="margin-top:12px">
+          <div>
+            <div class="control"><label>位置差 <span id="posGapLabel">3</span></label><input id="posGap" type="range" min="0" max="12" step="1" value="3"></div>
+            <p id="posExplain" class="note"></p>
+          </div>
+          <svg id="ropeSvg" viewBox="0 0 420 260" role="img" aria-label="RoPE 旋转示意"></svg>
+        </div>
+      </div>
+      <aside class="panel explain">
+        <div class="note"><b>原始 Transformer</b><br>用 sin/cos 不同频率给每个位置一个指纹，再加到 token embedding 上。</div>
+        <div class="note"><b>现代 LLM 常见做法</b><br>RoPE 把位置变成 Q/K 空间里的旋转。两个 token 的相对距离会体现在点积里，因此适合长上下文扩展。</div>
+        <div class="note warn"><b>学习顺序</b><br>先理解“无位置会变词袋”，再看 learned position 和 sin/cos；最后再展开 RoPE、ALiBi、长度外推。</div>
+      </aside>
+    </section>
+
+    <section id="block" class="view grid hidden">
+      <div class="panel">
+        <h2>Transformer Block：横向交流，再纵向加工</h2>
+        <p class="lede">一个 Block 由 Attention、FFN、残差连接和 LayerNorm 组成。堆很多层，模型就能反复“交流、加工、保留原信息”。</p>
+        <div class="flow">
+          <div class="node wide">输入 X：token embedding + position</div><div class="arrow">↓</div>
+          <div class="block">
+            <div class="node">LayerNorm → Multi-Head Self-Attention</div><div class="plus">+</div><div class="node">残差：保留原始通道，稳定深层训练</div>
+          </div><div class="arrow">↓</div>
+          <div class="block">
+            <div class="node">LayerNorm → FFN，两层 MLP，逐 token 加工</div><div class="plus">+</div><div class="node">残差：让梯度有近路可走</div>
+          </div><div class="arrow">↓</div>
+          <div class="node wide">输出：每个 token 都带着上下文的新表示</div>
+        </div>
+      </div>
+      <aside class="panel explain">
+        <div class="note"><b>Attention 的职责</b><br>横向混合序列信息：这个词应该参考哪些词。</div>
+        <div class="note"><b>FFN 的职责</b><br>对每个位置独立做非线性变换：拿到上下文后自己加工。</div>
+        <div class="note"><b>残差 + LayerNorm</b><br>主要是训练稳定性。没有它们，几十层、上百层 Transformer 很难训。</div>
+      </aside>
+    </section>
+
+    <section id="practice" class="view hidden">
+      <div class="panel">
+        <h2>自测卡：确认自己真的看懂了</h2>
+        <p class="lede">先自己说一遍，再点开参考答案。目标不是背原文，而是能用图和公式解释信息怎么流动。</p>
+        <div class="qa" id="qa"></div>
+      </div>
+    </section>
+
+    <p class="footer">依据：本地 Obsidian Vault R37《Transformer 原理从直觉到代码完全指南》；外部来源包括 <a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a>、<a href="https://nlp.seas.harvard.edu/annotated-transformer/">The Annotated Transformer</a>、<a href="https://github.com/karpathy/nanoGPT">nanoGPT</a>。本课件是学习用的可视化抽象，不等同于真实模型内部学到的具体权重。</p>
+  </main>
+
+  <script>
+    const tokens=["小明","把","苹果","放进","书包","因为","他","饿了"];
+    const heads=[
+      {name:"局部上下文",hint:"相邻词更重要",fn:(i,j)=>2.2-Math.abs(i-j)*.85},
+      {name:"指代关系",hint:"他 → 小明",fn:(i,j)=> i===6&&j===0?2.2:i===7&&j===6?2.1:.6-Math.abs(i-j)*.18},
+      {name:"动作结构",hint:"放进 → 苹果 / 书包",fn:(i,j)=> i===3&&(j===2||j===4)?3.6:i===2&&j===3?2.4:.8-Math.abs(i-j)*.25},
+      {name:"原因链",hint:"因为连接前后事件",fn:(i,j)=> i>=5&&[0,2,7].includes(j)?2.7:1-Math.abs(i-j)*.2}
+    ];
+    const qaData=[
+      ["Transformer 为什么比 RNN 更适合大规模训练？","核心是并行性和路径长度。RNN 必须按时间步串行，长程信息要走很多步；Self-Attention 一次矩阵乘法计算所有 token 两两关系，任意两个位置的信息路径长度近似为 1，更适合 GPU。"],
+      ["Q/K/V 分别是什么？","它们不是人工定义的语义字段，而是 X 经过三个可学习线性层得到的表示。Q 负责发起匹配，K 负责被匹配，V 是最终被加权聚合的信息。"],
+      ["为什么要除以 sqrt(d_k)？","点积维度越高，分数方差越大，softmax 会过早饱和，导致权重接近 one-hot、梯度变小。缩放可以稳定训练。"],
+      ["Multi-Head 的必要性是什么？","一个头只能在一个子空间里学习一种注意力模式。多个头把通道拆开，在不同子空间并行学习局部、句法、指代、长程等模式，再拼接融合。"],
+      ["为什么 Decoder 需要 causal mask？","自回归生成训练时只能用当前位置之前的信息预测下一个 token。mask 把未来位置分数设为 -∞，避免模型偷看答案。"],
+      ["位置编码解决什么问题？","Attention 本身对顺序不敏感。如果只看词集合，'我喜欢猫' 和 '猫喜欢我' 会混淆。位置编码把词序注入 embedding 或 Q/K 空间。"],
+      ["Transformer Block 里 FFN 做什么？","Attention 让 token 横向交换信息，FFN 对每个 token 的上下文表示做非线性加工。两者职责不同，都需要。"],
+      ["KV Cache 和 Attention 是什么关系？","生成第 t 个 token 时，历史 token 的 K/V 不会变，可以缓存起来；下一步只算新 token 的 Q/K/V，并让新 Q 去查历史 K/V，从而减少重复计算。"]
+    ];
+    let current=6, activeHead=1;
+    const $=s=>document.querySelector(s);
+    function raw(i,j,h=0){let base=heads[h].fn(i,j); if(i===7&&(j===6||j===2))base+=.45; return base}
+    function softmax(arr,temp=1){let m=Math.max(...arr), ex=arr.map(x=>Math.exp((x-m)/temp)), sum=ex.reduce((a,b)=>a+b,0); return ex.map(x=>x/sum)}
+    function color(v,masked){if(masked)return ""; let a=Math.max(.06,Math.min(.96,v*3.2)); return `rgba(15,118,110,${a})`}
+    function textColor(v){return v>.22?"#fff":"#2b2620"}
+    function renderTokens(target,cb){const el=$(target); el.innerHTML=tokens.map((t,i)=>`<button class="token ${i===current?"active":""}" data-i="${i}">${t}</button>`).join(""); el.querySelectorAll("button").forEach(b=>b.onclick=()=>{current=+b.dataset.i; $("#idx").value=current; renderAll()})}
+    function matrixWeights(h=0,temp=1,mask=false){return tokens.map((_,i)=>{let row=tokens.map((_,j)=>mask&&j>i?-Infinity:raw(i,j,h)); return softmax(row,temp)})}
+    function renderHeat(elId,weights,{mask=false,rowOnly=false}={}){let cols=tokens.length+1, html=`<div class="heat" style="grid-template-columns:92px repeat(${tokens.length},64px)">`; html+=`<div class="cell headcell">Query \\ Key</div>`+tokens.map(t=>`<div class="cell headcell">${t}</div>`).join(""); weights.forEach((r,i)=>{if(rowOnly&&i!==current)return; html+=`<div class="cell rowlabel">${tokens[i]}</div>`; r.forEach((v,j)=>{let m=mask&&j>i; html+=`<div class="cell ${m?"masked":""}" style="background:${m?"":color(v)};color:${textColor(v)}">${m?"×":v.toFixed(2)}</div>`})}); html+=`</div>`; $(elId).innerHTML=html}
+    function renderStory(row,mask){let ranked=row.map((v,i)=>({v,i,t:tokens[i]})).filter(x=>!(mask&&x.i>current)).sort((a,b)=>b.v-a.v).slice(0,3); $("#storyLine").innerHTML=tokens.map((t,i)=>`<span class="story-token ${i===current?"current":""} ${ranked.some(x=>x.i===i)&&i!==current?"source":""} ${mask&&i>current?"future":""}">${t}</span>`).join(""); $("#sourceList").innerHTML=ranked.map(x=>`<div class="source-row"><b>${x.t}</b><div class="source-track"><div class="source-fill" style="width:${Math.round(x.v*100)}%"></div></div><span>${x.v.toFixed(2)}</span></div>`).join("")}
+    function renderAttention(){renderTokens("#tokensA"); $("#idxLabel").textContent=tokens[current]; $("#tempLabel").textContent=(+$("#temp").value).toFixed(2); let temp=+$("#temp").value, mask=$("#maskToggle").checked; let weights=matrixWeights(activeHead,temp,mask); renderHeat("#attentionHeat",weights,{mask,rowOnly:true}); let row=weights[current], max=Math.max(...row), target=row.indexOf(max); renderStory(row,mask); $("#qText").textContent=`“${tokens[current]}” 的 Query 像是在问：我现在该补哪些上下文信息？`; $("#softText").textContent=`这一行比例加起来是 1。当前最大来源是 “${tokens[target]}”：${max.toFixed(2)}。`; $("#vText").textContent=`不是复制文字，而是把各列的 Value 向量按比例加权，得到 “${tokens[current]}” 的新向量。`; $("#focusBar").style.width=`${Math.round(max*100)}%`; $("#focusText").textContent=max>.5?"偏集中：当前词主要参考一个来源，但仍保留少量上下文。":max>.28?"中等集中：既看主来源，也综合其他词。":"较分散：像在综合全句信息。"; renderTokens("#maskTokens")}
+    function renderMask(){let w=matrixWeights(0,1,true); renderHeat("#maskHeat",w,{mask:true}); $("#maskTokens").innerHTML=tokens.map((t,i)=>`<span class="token ${i===current?"active":""} ${i>current?"future":""}">${t}</span>`).join("")}
+    function renderHeads(){let tabs=$("#headTabs"); tabs.innerHTML=heads.map((h,i)=>`<button class="headtab ${i===activeHead?"active":""}" data-h="${i}">${h.name}</button>`).join(""); tabs.querySelectorAll("button").forEach(b=>b.onclick=()=>{activeHead=+b.dataset.h; renderAll()}); renderHeat("#headHeat",matrixWeights(activeHead,1,false))}
+    function renderPosition(){let gap=+$("#posGap").value; $("#posGapLabel").textContent=gap; $("#posExplain").innerHTML=`RoPE 的直觉：同一个内容向量会随位置旋转。位置差为 <b>${gap}</b> 时，两个向量夹角变大，点积会带上相对距离信息。`; let c=[210,130], r=74, a1=-.7, a2=a1+gap*.22; let p=(a)=>[c[0]+Math.cos(a)*r,c[1]+Math.sin(a)*r]; let p1=p(a1), p2=p(a2); $("#ropeSvg").innerHTML=`<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#0f766e"/></marker><marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#b45309"/></marker></defs><circle cx="${c[0]}" cy="${c[1]}" r="${r}" fill="none" stroke="#d8d1c4" stroke-width="2"/><line x1="${c[0]}" y1="${c[1]}" x2="${p1[0]}" y2="${p1[1]}" stroke="#0f766e" stroke-width="5" marker-end="url(#arr)"/><line x1="${c[0]}" y1="${c[1]}" x2="${p2[0]}" y2="${p2[1]}" stroke="#b45309" stroke-width="5" marker-end="url(#arr2)"/><text x="18" y="28" fill="#24211d">同一语义向量，在不同位置有不同角度</text><text x="${p1[0]-18}" y="${p1[1]-12}" fill="#0f766e">pos i</text><text x="${p2[0]-18}" y="${p2[1]-12}" fill="#b45309">pos i+${gap}</text>`}
+    function renderQA(){let el=$("#qa"); el.innerHTML=qaData.map((q,i)=>`<article class="card"><h3>${i+1}. ${q[0]}</h3><div class="answer">${q[1]}</div><button class="reveal">显示答案</button></article>`).join(""); el.querySelectorAll(".reveal").forEach(btn=>btn.onclick=()=>{btn.parentElement.classList.toggle("open"); btn.textContent=btn.parentElement.classList.contains("open")?"收起答案":"显示答案"})}
+    function renderAll(){renderAttention(); renderMask(); renderHeads(); renderPosition(); renderQA()}
+    document.querySelectorAll(".tab").forEach(btn=>btn.onclick=()=>{document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active")); btn.classList.add("active"); document.querySelectorAll(".view").forEach(v=>v.classList.add("hidden")); $("#"+btn.dataset.view).classList.remove("hidden")});
+    $("#idx").oninput=e=>{current=+e.target.value; renderAll()}; $("#temp").oninput=renderAll; $("#maskToggle").onchange=renderAll; $("#posGap").oninput=renderPosition; renderAll();
+  </script>
+</body>
+</html>

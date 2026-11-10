@@ -1,0 +1,55 @@
+# LiteLLM Proxy 进阶配置 —— P04 模式 C Full
+# 含语义缓存（Redis）+ Virtual Key 持久化（Postgres）+ 多副本 Load Balance
+# 用法：docker-compose up -d && litellm --config litellm_config.advanced.yaml --port 4000
+
+model_list:
+  # ─── reasoning 角色：3 个真模型分流（演示 LB 权重） ───
+  - model_name: reasoning
+    litellm_params:
+      model: anthropic/claude-sonnet-4-20250514
+      api_key: os.environ/ANTHROPIC_API_KEY
+      rpm: 500                       # 每分钟限速
+      weight: 3                      # 60% 流量
+  - model_name: reasoning
+    litellm_params:
+      model: openai/o4-mini
+      api_key: os.environ/OPENAI_API_KEY
+      weight: 1                      # 20%
+  - model_name: reasoning
+    litellm_params:
+      model: gemini/gemini-2.5-pro
+      api_key: os.environ/GEMINI_API_KEY
+      weight: 1                      # 20%
+
+  # ─── fast-cheap 角色（fallback 目标） ───
+  - model_name: fast-cheap
+    litellm_params:
+      model: openai/gpt-4o-mini
+      api_key: os.environ/OPENAI_API_KEY
+
+# ─── 语义缓存：相似 Prompt 命中历史回答 ───
+litellm_settings:
+  cache: true
+  cache_params:
+    type: redis
+    host: localhost
+    port: 6379
+    similarity_threshold: 0.95       # 余弦相似度 ≥ 0.95 即命中
+    ttl: 3600                        # 1 小时过期
+  set_verbose: false
+  drop_params: true
+
+# ─── 路由：fallback + 重试 + 超时 ───
+router_settings:
+  fallbacks:
+    - reasoning: ["fast-cheap"]
+  num_retries: 3
+  timeout: 30
+  retry_after: 2                     # 指数退避起点（秒）
+
+# ─── Virtual Keys + 全局预算 ───
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY
+  database_url: os.environ/DATABASE_URL  # postgresql://litellm:litellm@localhost:5432/litellm
+  max_budget: 1000.0                 # 全局月预算（美元）
+  budget_duration: 30d

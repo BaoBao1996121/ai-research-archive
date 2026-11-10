@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>线性代数可视化 - 矩阵变换</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 线性代数可视化</h1>
+            <p class="subtitle">直观理解矩阵变换的几何意义</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="2d">2D 变换</button>
+            <button class="tab-btn" data-tab="3d">3D 变换</button>
+        </div>
+
+        <!-- 2D Tab -->
+        <div id="2d-tab" class="tab-content active">
+            <div class="visualization-area">
+                <div class="canvas-container">
+                    <canvas id="canvas2d" width="600" height="600"></canvas>
+                </div>
+
+                <div class="controls">
+                    <h3>2×2 矩阵</h3>
+                    <div class="matrix-display">
+                        <div class="matrix-grid">
+                            <input type="number" id="m00" value="1" step="0.1">
+                            <input type="number" id="m01" value="0" step="0.1">
+                            <input type="number" id="m10" value="0" step="0.1">
+                            <input type="number" id="m11" value="1" step="0.1">
+                        </div>
+                    </div>
+
+                    <div class="info-panel">
+                        <div class="info-item">
+                            <label>行列式:</label>
+                            <span id="det2d" class="value">1.00</span>
+                        </div>
+                        <div class="info-item">
+                            <label>面积缩放:</label>
+                            <span id="scale2d" class="value">×1.00</span>
+                        </div>
+                    </div>
+
+                    <h4>预设变换</h4>
+                    <div class="preset-buttons">
+                        <button class="preset-btn" data-matrix="1,0,0,1">恒等</button>
+                        <button class="preset-btn" data-matrix="2,0,0,2">放大2倍</button>
+                        <button class="preset-btn" data-matrix="0.5,0,0,0.5">缩小0.5倍</button>
+                        <button class="preset-btn" data-matrix="0,-1,1,0">旋转90°</button>
+                        <button class="preset-btn" data-matrix="-1,0,0,-1">旋转180°</button>
+                        <button class="preset-btn" data-matrix="-1,0,0,1">X轴镜像</button>
+                        <button class="preset-btn" data-matrix="1,0,0,-1">Y轴镜像</button>
+                        <button class="preset-btn" data-matrix="1,1,0,1">剪切</button>
+                        <button class="preset-btn" data-matrix="1,0,1,1">Y向剪切</button>
+                        <button class="preset-btn" data-matrix="2,1,0,1">复合变换</button>
+                    </div>
+
+                    <div class="animation-controls">
+                        <button id="animate2d" class="action-btn">▶ 动画演示</button>
+                        <button id="reset2d" class="action-btn">🔄 重置</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3D Tab -->
+        <div id="3d-tab" class="tab-content">
+            <div class="visualization-area">
+                <div class="canvas-container">
+                    <canvas id="canvas3d" width="600" height="600"></canvas>
+                </div>
+
+                <div class="controls">
+                    <h3>3×3 矩阵</h3>
+                    <div class="matrix-display-3d">
+                        <div class="matrix-grid-3d">
+                            <input type="number" id="m3d00" value="1" step="0.1">
+                            <input type="number" id="m3d01" value="0" step="0.1">
+                            <input type="number" id="m3d02" value="0" step="0.1">
+                            <input type="number" id="m3d10" value="0" step="0.1">
+                            <input type="number" id="m3d11" value="1" step="0.1">
+                            <input type="number" id="m3d12" value="0" step="0.1">
+                            <input type="number" id="m3d20" value="0" step="0.1">
+                            <input type="number" id="m3d21" value="0" step="0.1">
+                            <input type="number" id="m3d22" value="1" step="0.1">
+                        </div>
+                    </div>
+
+                    <div class="info-panel">
+                        <div class="info-item">
+                            <label>行列式:</label>
+                            <span id="det3d" class="value">1.00</span>
+                        </div>
+                        <div class="info-item">
+                            <label>体积缩放:</label>
+                            <span id="scale3d" class="value">×1.00</span>
+                        </div>
+                    </div>
+
+                    <h4>预设变换</h4>
+                    <div class="preset-buttons">
+                        <button class="preset-btn-3d" data-matrix="1,0,0,0,1,0,0,0,1">恒等</button>
+                        <button class="preset-btn-3d" data-matrix="2,0,0,0,2,0,0,0,2">放大2倍</button>
+                        <button class="preset-btn-3d" data-matrix="0.5,0,0,0,0.5,0,0,0,0.5">缩小0.5倍</button>
+                        <button class="preset-btn-3d" data-matrix="1,0,0,0,0,-1,0,1,0">绕X轴旋转90°</button>
+                        <button class="preset-btn-3d" data-matrix="0,0,1,0,1,0,-1,0,0">绕Y轴旋转90°</button>
+                        <button class="preset-btn-3d" data-matrix="0,-1,0,1,0,0,0,0,1">绕Z轴旋转90°</button>
+                        <button class="preset-btn-3d" data-matrix="1,0,0,0,1,1,0,0,1">Z向剪切</button>
+                        <button class="preset-btn-3d" data-matrix="2,0,0,0,1,0,0,0,1">X轴拉伸</button>
+                    </div>
+
+                    <div class="animation-controls">
+                        <button id="animate3d" class="action-btn">▶ 动画演示</button>
+                        <button id="reset3d" class="action-btn">🔄 重置</button>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="autoRotate3d" checked>
+                            自动旋转视角
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="explanation">
+            <h3>💡 关键概念</h3>
+            <ul>
+                <li><strong>行列式 (Determinant):</strong> 表示变换后面积/体积的缩放比例。负值表示翻转。</li>
+                <li><strong>基向量:</strong> 彩色向量显示坐标系的基向量如何变换。</li>
+                <li><strong>网格:</strong> 展示空间如何被拉伸、旋转、剪切。</li>
+                <li><strong>物体:</strong> 观察几何形状在变换下的变化。</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="matrix2d.js"></script>
+    <script src="matrix3d.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+# ==============================================
+# v4 · 全武装：Multi-Query + Hybrid + Rerank + Parent-Doc + Chain-of-Note
+# 这是教学项目能跑出的最佳配方。生产环境再加 Contextual Retrieval。
+# ==============================================
+persist_dir: ./data
+
+corpus:
+  dirs:
+    - ../../reports
+    - ../../tutorial
+
+ingest:
+  strategy: markdown_header
+  max_size: 1500
+
+embed:
+  kind: sentence_transformer
+  model: BAAI/bge-m3
+
+index:
+  backend: chroma
+
+query:
+  transform: multi_query       # ← Multi-Query 比 HyDE 更稳定
+  llm:
+    model: qwen3:8b
+    base_url: ${OLLAMA_BASE_URL}
+    api_key: ${OLLAMA_API_KEY}
+    temperature: 0.7
+
+retrieve:
+  mode: hybrid_rrf
+
+rerank:
+  model: bge_reranker
+  model_name: BAAI/bge-reranker-v2-m3
+
+compress:
+  mode: parent_doc             # ← 召回精细 chunk，喂大上下文
+  max_chars: 8000
+
+generate:
+  model: qwen3:8b               # 有更强模型可换 qwen3.6:35b-a3b
+  base_url: ${OLLAMA_BASE_URL}
+  api_key: ${OLLAMA_API_KEY}
+  temperature: 0.2
+  max_tokens: 1024
+  prompt: chain_of_note         # ← 先 notes 再答，降幻觉

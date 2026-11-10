@@ -1,0 +1,42 @@
+# ==============================================
+# v1 · Hybrid 检索（BM25 + dense，RRF 融合）
+# 增量：dense 召回不到的术语/缩写/人名靠 BM25 救
+# ==============================================
+persist_dir: ./data
+
+corpus:
+  dirs:
+    - ../../reports
+    - ../../tutorial
+
+ingest:
+  strategy: markdown_header   # ← 升级：按 # ## ### 切，保留标题路径
+  max_size: 1500
+
+embed:
+  kind: sentence_transformer
+  model: BAAI/bge-m3
+
+index:
+  backend: chroma
+
+query:
+  transform: none
+
+retrieve:
+  mode: hybrid_rrf            # ← 升级：dense + BM25 融合
+
+rerank:
+  model: none
+
+compress:
+  mode: topk
+  max_chars: 6000
+
+generate:
+  model: qwen3:8b
+  base_url: ${OLLAMA_BASE_URL}
+  api_key: ${OLLAMA_API_KEY}
+  temperature: 0.3
+  max_tokens: 800
+  prompt: standard

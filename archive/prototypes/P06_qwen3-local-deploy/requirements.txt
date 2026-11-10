@@ -1,0 +1,4 @@
+openai>=1.54.0
+requests>=2.31.0
+# 可选：Agent demo 才需要
+# qwen-agent[mcp]>=0.0.20

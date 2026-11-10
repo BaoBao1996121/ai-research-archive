@@ -1,0 +1,26 @@
+# Redis-for-Agent Lab 共享依赖
+# pip install -r requirements.txt
+
+# === 基础 Redis 客户端 ===
+redis>=5.0.8           # 官方 Python 客户端，支持 Vector Set / Streams / Pub-Sub
+redisvl>=0.3.7         # Redis Vector Library（语义缓存、向量索引高级封装）
+fakeredis[lua]>=2.26   # 可选：本机无 Docker/Memurai 时用，设 USE_FAKEREDIS=1 启用
+
+# === LLM/Embedding 客户端（OpenAI 兼容协议，DashScope/Qwen 也走它）===
+openai>=1.40.0
+numpy>=1.26.0          # 余弦相似度计算
+tiktoken>=0.7.0        # token 计数（成本估算用）
+
+# === 配置管理 ===
+python-dotenv>=1.0.1   # .env 文件加载
+
+# === 章节 01 LangGraph Checkpoint（可选，仅 01 用）===
+# 注：langgraph-checkpoint-redis 要求 Redis >= 8.0，且接口仍在快速迭代
+# 如果不跑 01 章节，可以注释掉以下两行
+langgraph>=0.2.50
+langgraph-checkpoint-redis>=0.4.1
+
+# === 章节 04 RediSearch 演示（可选）===
+# 不需要额外包，redis-vl 已包含
+
+# === 章节 06/07 进阶（无额外依赖，纯 redis 即可）===

@@ -1,0 +1,38 @@
+# LiteLLM Proxy 最小配置 —— P04 模式 B Local
+# 用法：litellm --config litellm_config.yaml --port 4000
+# 文档：https://docs.litellm.ai/docs/proxy/configs
+
+model_list:
+  # ─────── 业务别名 "fast"：便宜快速，用于简单问答 ───────
+  - model_name: fast
+    litellm_params:
+      model: openai/gpt-4o-mini
+      api_key: os.environ/OPENAI_API_KEY
+
+  # ─────── 业务别名 "smart"：高推理能力，用于复杂任务 ───────
+  - model_name: smart
+    litellm_params:
+      model: anthropic/claude-sonnet-4-20250514
+      api_key: os.environ/ANTHROPIC_API_KEY
+
+  # ─────── 业务别名 "local"：本地 Ollama，零成本兜底 ───────
+  - model_name: local
+    litellm_params:
+      model: ollama/qwen2.5:7b
+      api_base: http://localhost:11434
+
+# ─────── Fallback：主模型出错自动切备份 ───────
+router_settings:
+  fallbacks:
+    - fast: ["smart", "local"]      # fast 挂 → smart → local
+    - smart: ["fast"]
+  num_retries: 3
+  timeout: 30                        # 秒
+
+# ─────── 全局设置 ───────
+litellm_settings:
+  set_verbose: false
+  drop_params: true                  # 自动丢弃模型不支持的参数（如 Claude 不认 logit_bias）
+
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY

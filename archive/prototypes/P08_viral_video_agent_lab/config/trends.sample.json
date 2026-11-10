@@ -1,0 +1,16 @@
+{
+  "trends": [
+    {
+      "id": "manual_ai_meeting",
+      "title": "AI meeting notes turned into a sitcom",
+      "angle": "A team discovers the notes are more honest than the humans.",
+      "risk": "low"
+    },
+    {
+      "id": "manual_private_leak",
+      "title": "Private chat leak about a real person",
+      "angle": "This should be rejected by the safety gate.",
+      "risk": "privacy"
+    }
+  ]
+}

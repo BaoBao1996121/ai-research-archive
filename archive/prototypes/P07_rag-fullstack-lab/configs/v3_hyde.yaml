@@ -1,0 +1,48 @@
+# ==============================================
+# v3 · + HyDE 查询改写
+# 增量：先让 LLM 生成"假答案"再用它检索（解决问题词 vs 文档词分布不一致）
+# ==============================================
+persist_dir: ./data
+
+corpus:
+  dirs:
+    - ../../reports
+    - ../../tutorial
+
+ingest:
+  strategy: markdown_header
+  max_size: 1500
+
+embed:
+  kind: sentence_transformer
+  model: BAAI/bge-m3
+
+index:
+  backend: chroma
+
+query:
+  transform: hyde             # ← 升级
+  llm:
+    model: qwen3:8b
+    base_url: ${OLLAMA_BASE_URL}
+    api_key: ${OLLAMA_API_KEY}
+    temperature: 0.7
+
+retrieve:
+  mode: hybrid_rrf
+
+rerank:
+  model: bge_reranker
+  model_name: BAAI/bge-reranker-v2-m3
+
+compress:
+  mode: topk
+  max_chars: 6000
+
+generate:
+  model: qwen3:8b
+  base_url: ${OLLAMA_BASE_URL}
+  api_key: ${OLLAMA_API_KEY}
+  temperature: 0.3
+  max_tokens: 800
+  prompt: with_citations

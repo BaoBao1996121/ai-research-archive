@@ -1,0 +1,16 @@
+{
+  "name": "mini-pi-learning-lab",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "test": "node --test tests/iter00-whole-game.test.ts tests/iter01-protocol.test.ts tests/iter02-agent-loop.test.ts tests/iter03-tool-pipeline.test.ts",
+    "demo": "node examples/whole-game.ts",
+    "test:iter00": "node --test tests/iter00-whole-game.test.ts",
+    "test:iter01": "node --test tests/iter01-protocol.test.ts",
+    "test:iter02": "node --test tests/iter02-agent-loop.test.ts",
+    "test:iter03": "node --test tests/iter03-tool-pipeline.test.ts"
+  }
+}

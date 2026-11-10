@@ -1,0 +1,25 @@
+cases:
+  - id: case_001_full_pipeline_dry_run
+    expects:
+      - PipelineStarted
+      - TrendDetected
+      - PublicationDryRun
+  - id: case_002_safety_gate_rejects_sensitive_topic
+    expects:
+      - RiskRejected
+  - id: case_003_a2a_message_contract
+    fields:
+      - message_id
+      - trace_id
+      - conversation_id
+      - sender
+      - receiver
+      - performative
+      - payload
+  - id: case_004_human_approval_before_publish
+    expects_order:
+      - ApprovalRequested
+      - ApprovalGranted
+      - PublicationDryRun
+  - id: case_005_replayable_event_log
+    artifact: event_log.jsonl

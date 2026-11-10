@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "viral-video-agent-lab"
+version = "0.1.0"
+description = "Event-driven multi-agent demo for short video production."
+requires-python = ">=3.11"
+dependencies = [
+    "pillow>=10",
+    "imageio>=2.34",
+    "imageio-ffmpeg>=0.5",
+    "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+media = ["pillow>=10", "imageio>=2.34", "imageio-ffmpeg>=0.5", "numpy>=1.26"]
+live = []
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

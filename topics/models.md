@@ -1,0 +1,33 @@
+# 模型基础与训练
+
+[返回首页](../README.md) · [全部材料](../CATALOG.md)
+
+按原文件名归入专题，共 27 份文档；一份材料可以属于多个专题。
+
+- [LLM路由与检索逻辑优化](../archive/docs/LLM%E8%B7%AF%E7%94%B1%E4%B8%8E%E6%A3%80%E7%B4%A2/LLM%E8%B7%AF%E7%94%B1%E4%B8%8E%E6%A3%80%E7%B4%A2%E9%80%BB%E8%BE%91%E4%BC%98%E5%8C%96.md)
+- [P04 · LLM Gateway Lab](../archive/prototypes/P04_llm-gateway-lab/README.md)
+- [P04 LLM Gateway Lab · 验证记录](../archive/prototypes/P04_llm-gateway-lab/VALIDATION.md)
+- [P12 Transformer 可视化学习台](../archive/prototypes/P12_transformer-visualization/README.md)
+- [Langfuse — 开源 LLM 工程平台速查](../archive/reports/00-%E9%80%9F%E6%9F%A5/Langfuse_%E5%BC%80%E6%BA%90LLM%E5%B7%A5%E7%A8%8B%E5%B9%B3%E5%8F%B0%E9%80%9F%E6%9F%A5.md)
+- [RAGAS 评估框架与 LLM-as-Judge 关系速查](../archive/reports/00-%E9%80%9F%E6%9F%A5/RAGAS%E8%AF%84%E4%BC%B0%E6%A1%86%E6%9E%B6%E4%B8%8ELLM-as-Judge%E5%85%B3%E7%B3%BB%E9%80%9F%E6%9F%A5.md)
+- [Agentic RL：用强化学习训练 Agent](../archive/reports/01-%E7%90%86%E8%AE%BA%E4%B8%8E%E6%9E%B6%E6%9E%84/R101_Agentic_RL_%E7%94%A8%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E8%AE%AD%E7%BB%83Agent.md)
+- [LLM 指令遵循机制：从续写到听话](../archive/reports/01-%E7%90%86%E8%AE%BA%E4%B8%8E%E6%9E%B6%E6%9E%84/R137_LLM%E6%8C%87%E4%BB%A4%E9%81%B5%E5%BE%AA%E6%9C%BA%E5%88%B6_%E4%BB%8E%E7%BB%AD%E5%86%99%E5%88%B0%E5%90%AC%E8%AF%9D.md)
+- [Transformer 原理从直觉到代码完全指南](../archive/reports/01-%E7%90%86%E8%AE%BA%E4%B8%8E%E6%9E%B6%E6%9E%84/R37_Transformer%E5%8E%9F%E7%90%86%E4%BB%8E%E7%9B%B4%E8%A7%89%E5%88%B0%E4%BB%A3%E7%A0%81.md)
+- [R61 · LLM 从业者数学与代码速查手册](../archive/reports/01-%E7%90%86%E8%AE%BA%E4%B8%8E%E6%9E%B6%E6%9E%84/R61_LLM%E4%BB%8E%E4%B8%9A%E8%80%85%E6%95%B0%E5%AD%A6%E4%B8%8E%E4%BB%A3%E7%A0%81%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.md)
+- [LLM 预训练全景：从数据到 Scaling Law](../archive/reports/01-%E7%90%86%E8%AE%BA%E4%B8%8E%E6%9E%B6%E6%9E%84/R62_LLM%E9%A2%84%E8%AE%AD%E7%BB%83%E5%85%A8%E6%99%AF_%E4%BB%8E%E6%95%B0%E6%8D%AE%E5%88%B0ScalingLaw.md)
+- [Agent Skills 与 LLM Wiki 工具生态调研报告／](../archive/reports/02-%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87/R01_AgentSkills%E4%B8%8ELLMWiki%E7%94%9F%E6%80%81.md)
+- [Copilot 混合模型路由：用本地 LLM 分流调查任务节约主模型 Token](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R141_Copilot%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8B%E8%B7%AF%E7%94%B1_%E6%9C%AC%E5%9C%B0LLM%E5%88%86%E6%B5%81%E8%B0%83%E7%A0%94.md)
+- [小模型微调、LoRA 与量化实战前置学习指南](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R159_%E5%B0%8F%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83LoRA%E9%87%8F%E5%8C%96%E5%AE%9E%E6%88%98%E5%89%8D%E7%BD%AE%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97.md)
+- [LLM 从业者学习路线总览](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R54_LLM%E4%BB%8E%E4%B8%9A%E8%80%85%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E6%80%BB%E8%A7%88.md)
+- [LLM 推理部署工程指南：量化与推理引擎](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R58_LLM%E6%8E%A8%E7%90%86%E9%83%A8%E7%BD%B2%E5%B7%A5%E7%A8%8B%E6%8C%87%E5%8D%97_%E9%87%8F%E5%8C%96%E4%B8%8E%E6%8E%A8%E7%90%86%E5%BC%95%E6%93%8E.md)
+- [推理优化技术：KV Cache / FlashAttention / 投机解码深解](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R59_%E6%8E%A8%E7%90%86%E4%BC%98%E5%8C%96%E6%8A%80%E6%9C%AF_KVCache%E4%B8%8EFlashAttention%E4%B8%8E%E6%8A%95%E6%9C%BA%E8%A7%A3%E7%A0%81.md)
+- [LLM 服务化生产部署：成本 / 延迟 / 监控 / SLA](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R63_LLM%E6%9C%8D%E5%8A%A1%E5%8C%96%E7%94%9F%E4%BA%A7%E9%83%A8%E7%BD%B2_%E6%88%90%E6%9C%AC%E5%BB%B6%E8%BF%9F%E7%9B%91%E6%8E%A7SLA.md)
+- [R64 · Agent 网关设计：AI Gateway / LLM Gateway / MCP Gateway 三层拆解](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R64_Agent%E7%BD%91%E5%85%B3%E8%AE%BE%E8%AE%A1_AI_Gateway_LLM_Gateway_MCP_Gateway%E4%B8%89%E5%B1%82%E6%8B%86%E8%A7%A3.md)
+- [LLM/Agent 经济学与商业决策](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R69_LLM_Agent%E7%BB%8F%E6%B5%8E%E5%AD%A6%E4%B8%8E%E5%95%86%E4%B8%9A%E5%86%B3%E7%AD%96.md)
+- [LLM回答核验机制调研报告](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/hermes/2026-07-18/01-LLM%E5%9B%9E%E7%AD%94%E6%A0%B8%E9%AA%8C%E6%9C%BA%E5%88%B6.md)
+- [LLM Benchmark 速查手册](../archive/reports/05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R60_LLM_Benchmark%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.md)
+- [Python 3.11+, CUDA 12.1+, PyTorch 2.6+](../archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R52_%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E4%B8%8E%E5%BE%AE%E8%B0%83%E6%8A%80%E6%9C%AF%E5%85%A8%E6%99%AF.md)
+- [模型蒸馏技术全景调研——从 Hinton 到 DeepSeek-R1](../archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R53_%E6%A8%A1%E5%9E%8B%E8%92%B8%E9%A6%8F%E6%8A%80%E6%9C%AF%E5%85%A8%E6%99%AF.md)
+- [2026 主流 LLM 大模型横评](../archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R98_2026%E4%B8%BB%E6%B5%81LLM%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%A8%AA%E8%AF%84.md)
+- [LLM Service Stack Skill](../archive/skills/llm-service-stack/SKILL.md)
+- [Chapter 13: LLM 推理部署入门 — 从调 API 到起自己的服务](../archive/tutorial/Ch13-LLM%E6%8E%A8%E7%90%86%E9%83%A8%E7%BD%B2%E5%85%A5%E9%97%A8.md)

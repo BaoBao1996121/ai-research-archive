@@ -1,0 +1,43 @@
+# ==============================================
+# v2 · + Cross-encoder Rerank
+# 增量：召回 K=20 → 精排 top-5
+# ==============================================
+persist_dir: ./data
+
+corpus:
+  dirs:
+    - ../../reports
+    - ../../tutorial
+
+ingest:
+  strategy: markdown_header
+  max_size: 1500
+
+embed:
+  kind: sentence_transformer
+  model: BAAI/bge-m3
+
+index:
+  backend: chroma
+
+query:
+  transform: none
+
+retrieve:
+  mode: hybrid_rrf
+
+rerank:
+  model: bge_reranker         # ← 升级：bge-reranker-v2-m3
+  model_name: BAAI/bge-reranker-v2-m3
+
+compress:
+  mode: topk
+  max_chars: 6000
+
+generate:
+  model: qwen3:8b
+  base_url: ${OLLAMA_BASE_URL}
+  api_key: ${OLLAMA_API_KEY}
+  temperature: 0.3
+  max_tokens: 800
+  prompt: standard

@@ -1,0 +1,102 @@
+# ==============================================
+# Eval 集种子版 · 12 条覆盖 4 类难度
+# 你需要扩展到 30+ 条以获得稳定信号。建议每周新增 3-5 条真实使用中遇到的问题。
+# ==============================================
+
+- id: q001
+  question: "PSEV 框架的四个阶段分别是什么？"
+  difficulty: easy
+  category: factual
+  must_contain: ["Profile", "Strategy", "Execute", "Verify"]
+  ground_truth_keywords: ["psev", "画像", "策略", "执行", "验证"]
+  reference_answer: "PSEV 是 Profile（画像）→ Strategy（策略）→ Execute（执行）→ Verify（验证）四阶段决策框架。"
+
+- id: q002
+  question: "EDD 协议要求每次提交前必须做什么？"
+  difficulty: easy
+  category: factual
+  must_contain: ["Eval", "通过率"]
+  ground_truth_keywords: ["edd", "eval gate", "ci"]
+  reference_answer: "EDD 协议要求每次提交前必须运行 Eval 集，跑硬断言、LLM judge 软断言，并对比新旧版本输出回归数。"
+
+- id: q003
+  question: "本知识库中目前有几个 Skill？分别叫什么名字？"
+  difficulty: medium
+  category: factual
+  must_contain: ["skill"]
+  ground_truth_keywords: ["skill-evaluator", "tech-selector", "knowledge-base-organizer", "source-code-dissector", "agent-harness-scaffolder"]
+  reference_answer: "目前包含 5 个 Skill：knowledge-base-organizer、skill-evaluator、tech-selector、source-code-dissector、agent-harness-scaffolder。"
+
+- id: q004
+  question: "RAG 中 Hybrid 检索为什么要用 RRF 融合，而不是直接加权求和？"
+  difficulty: medium
+  category: conceptual
+  must_contain: ["RRF", "尺度"]
+  must_not_contain: []
+  ground_truth_keywords: ["排名", "rank", "尺度", "余弦", "bm25"]
+  reference_answer: "Dense 余弦分数在 [0,1]，BM25 分数在 [0,+∞)，尺度差异巨大，加权求和会被 BM25 主导。RRF 只看排名不看绝对分数，自然抹平尺度差异。"
+
+- id: q005
+  question: "在 8GB 显卡上跑 LLM，为什么 24GB 的 MoE 模型可能比 17GB 的稠密模型还快？"
+  difficulty: hard
+  category: conceptual
+  must_contain: ["MoE", "稀疏", "激活"]
+  ground_truth_keywords: ["moe", "稀疏激活", "offload", "io"]
+  reference_answer: "MoE 模型每次只激活一小部分参数（稀疏激活），CPU offload 时 IO 量降到约 1/9，所以即使总参数量更大反而更快。"
+
+- id: q006
+  question: "Anthropic 提出的 Contextual Retrieval 核心做法是什么？为什么有效？"
+  difficulty: hard
+  category: conceptual
+  must_contain: ["上下文", "chunk"]
+  ground_truth_keywords: ["上下文", "chunk", "embedding", "anthropic"]
+  reference_answer: "在 embedding 之前用 LLM 给每个 chunk 添加 50-100 字的上下文说明（如出处、所述对象），再做 embedding 和 BM25。这解决了 chunk 脱离上下文导致检索失败的问题，官方数据显示 top-20 召回失败率降低 49%。"
+
+- id: q007
+  question: "Skill 应该用 Why 驱动还是用 MUST/ALWAYS 堆规则？为什么？"
+  difficulty: medium
+  category: conceptual
+  must_contain: ["why", "解释"]
+  ground_truth_keywords: ["why", "anthropic", "解释", "原则"]
+  reference_answer: "应该用 Why 驱动。Anthropic Skill-Creator 的设计哲学之一是解释 Why 比堆 MUST/ALWAYS 更重要——因为模型理解了原则就能在新场景下推广，而僵硬的规则会在边界场景失效。"
+
+- id: q008
+  question: "本工作区中关于 Agent 记忆系统有哪些已确立的范式？"
+  difficulty: hard
+  category: cross_doc
+  must_contain: []
+  ground_truth_keywords: ["记忆", "memory", "agent"]
+  reference_answer: "需要查阅 R72_Agent记忆系统横评 等报告，整合给出工作记忆/情节记忆/语义记忆/程序记忆等分层范式。"
+
+- id: q009
+  question: "PSEV 框架是从哪几个独立领域的实践中被提炼出来的？"
+  difficulty: medium
+  category: cross_doc
+  must_contain: ["4", "四"]
+  ground_truth_keywords: ["知识库", "选型", "skill", "迭代", "指令"]
+  reference_answer: "PSEV 是从 4 个独立领域的实践中独立涌现并被提炼：知识库组织、技术选型、Skill 自迭代、指令漂移防御。"
+
+- id: q010
+  question: "HyDE 查询改写适合什么场景？什么场景反而会变差？"
+  difficulty: hard
+  category: conceptual
+  must_contain: []
+  ground_truth_keywords: ["hyde", "假答案", "长尾", "事实"]
+  reference_answer: "HyDE 适合长尾、概念性、问题与文档措辞差异大的场景；对简单事实题（如人名、日期、定义）反而会变差，因为生成的假答案可能引入噪声词。"
+
+- id: q011
+  question: "Ollama 在 Windows 下设置 OLLAMA_MODELS 环境变量为什么 setx 不生效？正确做法是什么？"
+  difficulty: hard
+  category: factual
+  must_contain: ["explorer", "session"]
+  ground_truth_keywords: ["setx", "explorer", "session", "ollama serve"]
+  reference_answer: "Windows 已登录会话的 explorer.exe 不刷新注册表环境变量，从开始菜单启动的 Ollama Desktop 继承的是 explorer 旧环境。正确做法是在当前 PowerShell 会话用 $env:OLLAMA_MODELS 设置，再用 ollama serve 命令行启动。"
+
+- id: q012
+  question: "什么是火星上的咖啡馆排名第一？"
+  difficulty: adversarial
+  category: adversarial
+  must_contain: ["无法", "没有"]
+  must_not_contain: ["第一名", "排名"]
+  ground_truth_keywords: ["无法回答", "资料"]
+  reference_answer: "应识别这是无法从资料库回答的问题，明确说"根据现有资料无法回答"，不要编造。"

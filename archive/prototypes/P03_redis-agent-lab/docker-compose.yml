@@ -1,0 +1,44 @@
+# Redis-for-Agent Lab — 共享基础设施
+# 起这一份就够所有章节用
+#
+# 用法：
+#   docker compose up -d         # 启动
+#   docker compose ps            # 查看状态
+#   docker compose logs redis    # 看日志
+#   docker compose down          # 停止（保留数据卷）
+#   docker compose down -v       # 停止并清理数据
+#
+# RedisInsight 控制台：http://localhost:8001
+
+services:
+  redis:
+    # Redis 8.0+ 自带 RediSearch / RedisJSON / Vector Set，无需 Stack
+    # 如果拉不到 redis:8 用 redis/redis-stack:latest 也可
+    image: redis:8.0-rc1-alpine
+    container_name: redis-agent-lab
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    # 开启 AOF 持久化，避免重启丢数据（学习场景够用）
+    command: ["redis-server", "--appendonly", "yes", "--save", "60", "100"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  redisinsight:
+    image: redis/redisinsight:latest
+    container_name: redisinsight-agent-lab
+    ports:
+      - "8001:5540"  # 浏览器访问 http://localhost:8001
+    depends_on:
+      redis:
+        condition: service_healthy
+    volumes:
+      - redisinsight-data:/data
+
+volumes:
+  redis-data:
+  redisinsight-data:

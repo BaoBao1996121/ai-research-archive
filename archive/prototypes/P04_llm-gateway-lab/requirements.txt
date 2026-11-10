@@ -1,0 +1,13 @@
+# P04 LLM Gateway Lab —— Python 依赖
+# 钉版本：与 R64 报告一致（2026-04 stable）
+
+# 网关本身（仅本地启 Proxy 时需要；dry-run 模式可省略）
+litellm[proxy]==1.83.13
+
+# 业务侧 SDK（dry-run 模式也用得上）
+openai>=1.50.0
+
+# 工具
+python-dotenv>=1.0.0
+httpx>=0.27.0
+numpy>=1.26.0           # 用于 dry-run 模拟语义缓存的 cosine

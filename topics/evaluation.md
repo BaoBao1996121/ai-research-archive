@@ -1,0 +1,30 @@
+# 评估、质量与安全
+
+[返回首页](../README.md) · [全部材料](../CATALOG.md)
+
+按原文件名归入专题，共 24 份文档；一份材料可以属于多个专题。
+
+- [_假设验证](../archive/docs/_%E5%81%87%E8%AE%BE%E9%AA%8C%E8%AF%81.md)
+- [RAG评估框架规范](../archive/docs/guides/ai-workflows/RAG%E8%AF%84%E4%BC%B0%E6%A1%86%E6%9E%B6%E8%A7%84%E8%8C%83.md)
+- [L22 · 评估体系：怎么知道你的 RAG 真的变好了](../archive/prototypes/P07_rag-fullstack-lab/docs/30_%E8%AF%84%E4%BC%B0%E4%BD%93%E7%B3%BB.md)
+- [RAGAS 评估框架与 LLM-as-Judge 关系速查](../archive/reports/00-%E9%80%9F%E6%9F%A5/RAGAS%E8%AF%84%E4%BC%B0%E6%A1%86%E6%9E%B6%E4%B8%8ELLM-as-Judge%E5%85%B3%E7%B3%BB%E9%80%9F%E6%9F%A5.md)
+- [实验4: 代码检索能力测试 — 从用户意图到代码定位](../archive/reports/03-%E5%AE%9E%E9%AA%8C%E9%AA%8C%E8%AF%81/R07_%E4%BB%A3%E7%A0%81%E6%A3%80%E7%B4%A2%E8%83%BD%E5%8A%9B%E5%AE%9E%E9%AA%8C.md)
+- [实验5: 从意图到工作流 — 如何实现完美的代码定位](../archive/reports/03-%E5%AE%9E%E9%AA%8C%E9%AA%8C%E8%AF%81/R10_%E6%84%8F%E5%9B%BE%E5%88%B0%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%AE%9E%E9%AA%8C.md)
+- [实验6: 端到端 Agent 测试 — 管道上下文质量验证](../archive/reports/03-%E5%AE%9E%E9%AA%8C%E9%AA%8C%E8%AF%81/R11_%E7%AB%AF%E5%88%B0%E7%AB%AFAgent%E6%B5%8B%E8%AF%95.md)
+- [Skill 自迭代机制深度研究报告](../archive/reports/03-%E5%AE%9E%E9%AA%8C%E9%AA%8C%E8%AF%81/R28_Skill%E8%87%AA%E8%BF%AD%E4%BB%A3%E6%9C%BA%E5%88%B6%E6%B7%B1%E5%BA%A6%E7%A0%94%E7%A9%B6.md)
+- [PI-I11 · 生产加固与评估：把 Thin Harness 放进厚边界](../archive/reports/04-%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/R157_PI_Agent%E6%B8%90%E8%BF%9B%E5%BC%8F%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97/lessons/PI-I11-%E7%94%9F%E4%BA%A7%E5%8A%A0%E5%9B%BA%E4%B8%8E%E8%AF%84%E4%BC%B0.md)
+- [最小 Coding Agent 能力边界与 Benchmark 路线](../archive/reports/05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R158_%E6%9C%80%E5%B0%8FCodingAgent%E8%83%BD%E5%8A%9B%E8%BE%B9%E7%95%8C%E4%B8%8EBenchmark%E8%B7%AF%E7%BA%BF_2026-08-03.md)
+- [Skill 与 Agent 评估方案全景调研报告](../archive/reports/05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R15_Skill%E4%B8%8EAgent%E8%AF%84%E4%BC%B0%E6%96%B9%E6%A1%88%E5%85%A8%E6%99%AF.md)
+- [Codex 与 Claude Code 代码评审评估优化策略](../archive/reports/05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R160_Codex%E4%B8%8EClaudeCode%E4%BB%A3%E7%A0%81%E8%AF%84%E5%AE%A1%E8%AF%84%E4%BC%B0%E4%BC%98%E5%8C%96%E7%AD%96%E7%95%A5_2026-08-18.md)
+- [AI 输出质量稳定性与反讨好（Anti-Sycophancy）研究报告](../archive/reports/05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R16_AI%E8%BE%93%E5%87%BA%E8%B4%A8%E9%87%8F%E7%A8%B3%E5%AE%9A%E6%80%A7%E4%B8%8E%E5%8F%8D%E8%AE%A8%E5%A5%BD.md)
+- [指令遵守验证与长期漂移检测研究报告](../archive/reports/05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R17_%E6%8C%87%E4%BB%A4%E9%81%B5%E5%AE%88%E9%AA%8C%E8%AF%81%E4%B8%8E%E9%95%BF%E6%9C%9F%E6%BC%82%E7%A7%BB%E6%A3%80%E6%B5%8B.md)
+- [长效 Agent Harness 工程化研究报告](../archive/reports/05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R33_%E9%95%BF%E6%95%88AgentHarness%E5%B7%A5%E7%A8%8B%E5%8C%96.md)
+- [Agent 安全与红队攻防体系研究报告](../archive/reports/05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R57_Agent%E5%AE%89%E5%85%A8%E4%B8%8E%E7%BA%A2%E9%98%9F%E6%94%BB%E9%98%B2%E4%BD%93%E7%B3%BB.md)
+- [LLM Benchmark 速查手册](../archive/reports/05-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F/R60_LLM_Benchmark%E9%80%9F%E6%9F%A5%E6%89%8B%E5%86%8C.md)
+- [Agent SDK 选型指南（2026 Q2 · 格式验证版）](../archive/reports/06-%E5%B7%A5%E5%85%B7%E4%B8%8E%E7%94%9F%E6%80%81/R132_Agent_SDK%E9%80%89%E5%9E%8B%E6%8C%87%E5%8D%97_%E6%A0%BC%E5%BC%8F%E9%AA%8C%E8%AF%81%E7%89%88.md)
+- [RAG 评估框架实施指南](../archive/reports/ai-workflows/RAG-%E8%AF%84%E4%BC%B0%E6%A1%86%E6%9E%B6%E5%AE%9E%E6%96%BD%E6%8C%87%E5%8D%97.md)
+- [RAG 评估分层基线设计](../archive/reports/rag-eval/RAG-%E8%AF%84%E4%BC%B0%E5%88%86%E5%B1%82%E5%9F%BA%E7%BA%BF%E8%AE%BE%E8%AE%A1.md)
+- [质量Oracle固化调研报告](../archive/reports/rag-quality-oracle/%E8%B4%A8%E9%87%8FOracle%E5%9B%BA%E5%8C%96.md)
+- [Claim Shadow验证方案](../archive/skills/rag-experiment/Claim-Shadow%E9%AA%8C%E8%AF%81%E6%96%B9%E6%A1%88.md)
+- [Chapter 8: 评估与质量 — 怎么知道 Agent 变好了](../archive/tutorial/Ch08-%E8%AF%84%E4%BC%B0%E4%B8%8E%E8%B4%A8%E9%87%8F.md)
+- [Chapter 9: 安全、压缩与可靠性](../archive/tutorial/Ch09-%E5%AE%89%E5%85%A8%E4%B8%8E%E5%8F%AF%E9%9D%A0%E6%80%A7.md)

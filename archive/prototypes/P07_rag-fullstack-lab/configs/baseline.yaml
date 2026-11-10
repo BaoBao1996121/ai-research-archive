@@ -1,0 +1,43 @@
+# ==============================================
+# Baseline · 最简 RAG（fixed chunk + dense + 无 rerank）
+# 学习目标：知道 vanilla RAG 的天花板在哪里
+# ==============================================
+persist_dir: ./data
+
+corpus:
+  dirs:
+    - ../../reports
+    - ../../tutorial
+
+ingest:
+  strategy: fixed       # 固定窗口
+  size: 512
+  overlap: 64
+
+embed:
+  kind: sentence_transformer
+  model: BAAI/bge-m3    # 中文最强 baseline 之一
+
+index:
+  backend: chroma       # 持久化向量库
+
+query:
+  transform: none       # 不改写
+
+retrieve:
+  mode: dense           # 仅向量检索
+
+rerank:
+  model: none           # 不重排
+
+compress:
+  mode: topk
+  max_chars: 6000
+
+generate:
+  model: qwen-plus
+  base_url: ${OLLAMA_BASE_URL}
+  api_key: ${OLLAMA_API_KEY}
+  temperature: 0.3
+  max_tokens: 800
+  prompt: standard
